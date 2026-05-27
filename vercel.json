@@ -1,0 +1,8 @@
+{
+  "github": { "enabled": true},
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "https://tourism-pocketbase-production.up.railway.app/api/:path*" },
+    { "source": "/_/:path*", "destination": "https://tourism-pocketbase-production.up.railway.app/_/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

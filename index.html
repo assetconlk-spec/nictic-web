@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/images/aboutUs/logo-high-res.png" />
+    <link rel="apple-touch-icon" href="/images/aboutUs/logo-high-res.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nictic | Sri Lanka Tourism</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      #loader {
+        position: fixed;
+        inset: 0;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+        transition: opacity 0.5s ease;
+      }
+      #loader.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #loader img {
+        width: 120px;
+        max-width: 35vw;
+        animation: loader-pulse 1.8s ease-in-out infinite;
+        filter: brightness(0) saturate(100%) invert(60%) sepia(30%) saturate(400%) hue-rotate(5deg) brightness(90%);
+      }
+      #loader-dots {
+        display: flex;
+        gap: 8px;
+        margin-top: 28px;
+      }
+      #loader-dots span {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #AC8E60;
+        animation: loader-dot 1.4s ease-in-out infinite both;
+      }
+      #loader-dots span:nth-child(2) { animation-delay: 0.2s; }
+      #loader-dots span:nth-child(3) { animation-delay: 0.4s; }
+      @keyframes loader-pulse {
+        0%, 100% { opacity: 1;   transform: scale(1); }
+        50%       { opacity: 0.8; transform: scale(0.96); }
+      }
+      @keyframes loader-dot {
+        0%, 80%, 100% { transform: scale(0.3); opacity: 0.3; }
+        40%           { transform: scale(1);   opacity: 1; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+      <img src="/images/aboutUs/logo-high-res.png" alt="Nictic" />
+      <div id="loader-dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="root"></div>
+    <script>
+      (function () {
+        var img = new Image();
+        img.src = '/images/aboutUs/logo-high-res.png';
+        img.onload = function () {
+          var canvas = document.createElement('canvas');
+          canvas.width = 64;
+          canvas.height = 64;
+          var ctx = canvas.getContext('2d');
+          ctx.drawImage(img, 0, 0, 64, 64);
+          ctx.globalCompositeOperation = 'source-atop';
+          ctx.fillStyle = '#AC8E60';
+          ctx.fillRect(0, 0, 64, 64);
+          var link = document.querySelector("link[rel~='icon']");
+          if (link) link.href = canvas.toDataURL();
+        };
+      })();
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

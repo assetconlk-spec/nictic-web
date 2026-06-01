@@ -26,6 +26,10 @@ export default function TourDetailPage() {
         const data = await pb
           .collection("tours")
           .getFirstListItem(`slug="${slug}"`);
+        const parseJson = (val) => {
+          if (Array.isArray(val)) return val;
+          try { return JSON.parse(val || '[]'); } catch { return []; }
+        };
         setTour({
           ...data,
           image: data.image
@@ -33,13 +37,13 @@ export default function TourDetailPage() {
             : data.image_url || "",
           map_image: data.map_image
             ? pb.files.getURL(data, data.map_image)
-            : "",
-          highlights: Array.isArray(data.highlights) ? data.highlights : [],
-          inclusions: Array.isArray(data.inclusions) ? data.inclusions : [],
-          exclusions: Array.isArray(data.exclusions) ? data.exclusions : [],
-          itinerary: Array.isArray(data.itinerary) ? data.itinerary : [],
+            : data.map_image_url || "",
+          highlights: parseJson(data.highlights),
+          inclusions: parseJson(data.inclusions),
+          exclusions: parseJson(data.exclusions),
+          itinerary:  parseJson(data.itinerary),
         });
-        document.title = `${data.title} | Gajalanka Tours`;
+        document.title = `${data.title} | nictic.travel`;
       } catch {
         navigate("/tours");
       }
@@ -331,7 +335,7 @@ export default function TourDetailPage() {
                     Inquire Now
                   </Link>
                   <p className="mt-3 text-center text-xs text-text-secondary">
-                    Plan with Gajalanka Tours
+                    Plan with nictic.travel
                   </p>
                 </div>
 

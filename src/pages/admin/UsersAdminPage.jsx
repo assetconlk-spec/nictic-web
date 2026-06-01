@@ -16,7 +16,7 @@ export default function UsersAdminPage() {
 
   const fetchUsers = () =>
     pb.collection("_superusers")
-      .getFullList({ sort: "+created" })
+      .getFullList({ sort: "id" })
       .then((records) => setUsers(records))
       .catch(() => {})
       .finally(() => setLoading(false));

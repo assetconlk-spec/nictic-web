@@ -15,7 +15,7 @@ export default function CategoriesAdminPage() {
 
   const fetchCategories = () =>
     pb.collection("categories")
-      .getFullList({ sort: "+created" })
+      .getFullList({ sort: "id" })
       .then((records) => setCategories(records))
       .catch(() => {})
       .finally(() => setLoading(false));

@@ -1,29 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  /* Primary — warm gold scale anchored on nictic palette */
-  --color-primary-50:  #faf5ed;
-  --color-primary-100: #f0dcbf;
-  --color-primary-200: #e9dac4;
-  --color-primary-300: #d7b279;
-  --color-primary-400: #cbb28c;
-  --color-primary-500: #AC8E60; /* nictic: #AC8E60 gold         */
-  --color-primary-600: #866e4a;
-  --color-primary-700: #5f4e33;
-  --color-primary-800: #382d1b;
-  --color-primary-900: #150f07;
-  --color-primary-950: #0a0804;
+  --color-primary-50:  #f0fdfa;
+  --color-primary-100: #ccfbf1;
+  --color-primary-200: #99f6e4;
+  --color-primary-300: #5eead4;
+  --color-primary-400: #2dd4bf;
+  --color-primary-500: #14b8a6;
+  --color-primary-600: #0d9488;
+  --color-primary-700: #0f766e;
+  --color-primary-800: #115e59;
+  --color-primary-900: #134e4a;
+  --color-primary-950: #042f2e;
 
   --color-surface:     #FFFFFF;
-  --color-surface-alt: #F0DCBF; /* nictic: warm cream           */
+  --color-surface-alt: #F8FAFB;
 
-  --color-accent:      #749EB2; /* nictic: #749EB2 steel blue   */
-  --color-accent-hover:#5A7C8C;
+  --color-accent:      #0d9488;
+  --color-accent-hover:#0f766e;
 
-  --color-secondary:   #BD8E83; /* nictic: #BD8E83 dusty rose   */
+  --color-secondary:   #64748b;
 
-  --color-text-primary:   #1E120F;
-  --color-text-secondary: #584C3B;
+  --color-text-primary:   #0f172a;
+  --color-text-secondary: #475569;
 
   --font-heading: "Urbanist", sans-serif;
   --font-body: "Urbanist", sans-serif;
@@ -43,6 +42,10 @@
   0%, 80%, 100% { transform: scale(0.3); opacity: 0.3; }
   40%           { transform: scale(1);   opacity: 1; }
 }
+
+/* Hide scrollbar for editorial horizontal strip */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* Admin sidebar nav — always-visible styled scrollbar */
 .admin-nav::-webkit-scrollbar {

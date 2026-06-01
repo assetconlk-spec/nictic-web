@@ -11,7 +11,7 @@ export default function ToursPage() {
   const banner = usePageBanner("tours", "/images/aboutUs/tour-banner.png", 41);
 
   useEffect(() => {
-    document.title = "Our Tours | Gajalanka Tours";
+    document.title = "Our Tours | nictic.travel";
   }, []);
 
   const [active, setActive] = useState("All");
@@ -21,7 +21,7 @@ export default function ToursPage() {
 
   useEffect(() => {
     pb.collection("tours")
-      .getFullList({ sort: "-created" })
+      .getFullList({ sort: "-id" })
       .then((data) => {
         setTours(
           data.map((r) => ({

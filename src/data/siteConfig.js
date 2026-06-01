@@ -1,6 +1,6 @@
 export const siteConfig = {
   name: "Nictic",
-  tagline: "Your Journey, Our Passion",
+  tagline: "Your Journey, Our Passion — Discover Sri Lanka",
   phone: "",
   email: "",
   whatsapp: "",

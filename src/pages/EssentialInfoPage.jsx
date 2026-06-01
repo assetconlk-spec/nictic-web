@@ -51,7 +51,7 @@ function AccordionItem({ section, content, index }) {
           {section.title}
         </span>
         <HiOutlineChevronDown
-          className={`h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 ${
+          className={`h-5 w-5 shrink-0 text-gray-600 transition-transform duration-200 ${
             open ? "rotate-180" : ""
           }`}
         />
@@ -88,7 +88,7 @@ function AccordionItem({ section, content, index }) {
               </ReactMarkdown>
             </div>
           ) : (
-            <p className="text-sm italic text-gray-400">
+            <p className="text-sm italic text-gray-600">
               Content coming soon.
             </p>
           )}
@@ -103,7 +103,7 @@ export default function EssentialInfoPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "Essential Information | Gajalanka Tours";
+    document.title = "Essential Information | nictic.travel";
     pb.collection("essential_info")
       .getFirstListItem("")
       .then((record) => setInfo(record))
@@ -126,7 +126,7 @@ export default function EssentialInfoPage() {
           <h1 className="mb-4 text-4xl font-extrabold md:text-5xl">
             Essential Information
           </h1>
-          <p className="mx-auto max-w-2xl text-lg text-gray-200">
+          <p className="mx-auto max-w-2xl text-lg text-gray-800">
             Everything you need to know before booking your Sri Lanka journey
             with us.
           </p>

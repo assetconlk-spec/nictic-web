@@ -9,13 +9,16 @@ export default function GalleryPreview() {
 
   useEffect(() => {
     pb.collection("gallery")
-      .getFullList({ filter: "featured=true", sort: "-created" })
+      .getFullList({ filter: "featured=true", sort: "-id" })
       .then((data) => {
         if (data.length > 0) {
           setPreview(
             data
               .slice(0, 5)
-              .map((r) => ({ ...r, src: pb.files.getURL(r, r.image) })),
+              .map((r) => ({
+                ...r,
+                src: r.image ? pb.files.getURL(r, r.image) : r.image_url || '',
+              })),
           );
         }
       })

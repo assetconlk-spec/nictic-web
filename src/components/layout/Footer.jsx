@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
-import {
-  HiOutlinePhone,
-  HiOutlineEnvelope,
-  HiOutlineMapPin,
-} from "react-icons/hi2";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { HiOutlinePhone, HiOutlineEnvelope, HiOutlineMapPin } from "react-icons/hi2";
 import { siteConfig } from "../../data/siteConfig";
 import { navLinks } from "../../data/navigation";
 import { pb } from "../../lib/pocketbase";
@@ -18,42 +14,38 @@ export default function Footer() {
 
   useEffect(() => {
     pb.collection("tours")
-      .getFullList({
-        filter: "popular=true",
-        sort: "-created",
-        requestKey: null,
-      })
+      .getFullList({ filter: "popular=true", sort: "-id", requestKey: null })
       .then((data) => setPopularTours(data))
       .catch(() => {});
   }, []);
 
   return (
-    <footer className="bg-primary-500 text-white">
-      <div className="mx-auto max-w-7xl px-4 py-16">
+    <footer className="bg-primary-950 text-white">
+      <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+
           {/* Brand */}
-          <div>
-            <h3 className="mb-4 text-2xl font-bold">{siteConfig.name}</h3>
-            <p className="mb-6 text-sm leading-relaxed text-gray-300">
-              Your trusted partner for unforgettable Sri Lankan experiences.
-              Discover ancient wonders, pristine beaches, and vibrant culture
-              with our expertly crafted tours.
+          <div className="lg:col-span-1">
+            <Link to="/" className="inline-flex items-baseline gap-1 mb-5">
+              <span className="text-2xl font-extrabold tracking-tight text-white">nictic</span>
+              <span className="text-2xl font-light text-primary-400">.travel</span>
+            </Link>
+            <p className="text-sm leading-relaxed text-primary-200/70 mb-6">
+              {siteConfig.tagline} — your trusted partner for authentic Sri Lankan experiences.
             </p>
             <div className="flex gap-3">
               {[
                 { icon: FaFacebookF, href: siteConfig.social.facebook },
                 { icon: FaInstagram, href: siteConfig.social.instagram },
-                // { icon: FaTwitter, href: siteConfig.social.twitter },
-                // { icon: FaYoutube, href: siteConfig.social.youtube },
               ].map(({ icon: Icon, href }, i) => (
                 <a
                   key={i}
-                  href={href}
+                  href={href || "#"}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-primary-500"
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white/70 transition-colors hover:bg-primary-500 hover:text-white"
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon className="h-3.5 w-3.5" />
                 </a>
               ))}
             </div>
@@ -61,13 +53,15 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold">Quick Links</h4>
+            <h4 className="mb-5 text-sm font-bold uppercase tracking-widest text-primary-400">
+              Explore
+            </h4>
             <ul className="space-y-3">
               {navLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-sm text-gray-300 transition-colors hover:text-primary-300"
+                    className="text-sm text-primary-200/70 transition-colors hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -76,7 +70,7 @@ export default function Footer() {
               <li>
                 <Link
                   to="/essential-info"
-                  className="text-sm text-gray-300 transition-colors hover:text-primary-300"
+                  className="text-sm text-primary-200/70 transition-colors hover:text-white"
                 >
                   Essential Info
                 </Link>
@@ -86,59 +80,73 @@ export default function Footer() {
 
           {/* Popular Tours */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold">Popular Tours</h4>
+            <h4 className="mb-5 text-sm font-bold uppercase tracking-widest text-primary-400">
+              Popular Tours
+            </h4>
             <ul className="space-y-3">
-              {popularTours.map((tour) => (
-                <li key={tour.id}>
-                  <Link
-                    to={`/tours/${tour.slug}`}
-                    className="text-sm text-gray-300 transition-colors hover:text-primary-300"
-                  >
-                    {tour.title}
-                  </Link>
-                </li>
-              ))}
+              {popularTours.length > 0 ? (
+                popularTours.map((tour) => (
+                  <li key={tour.id}>
+                    <Link
+                      to={`/tours/${tour.slug}`}
+                      className="text-sm text-primary-200/70 transition-colors hover:text-white"
+                    >
+                      {tour.title}
+                    </Link>
+                  </li>
+                ))
+              ) : (
+                <li className="text-sm text-primary-200/40">Coming soon</li>
+              )}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold">Contact Us</h4>
+            <h4 className="mb-5 text-sm font-bold uppercase tracking-widest text-primary-400">
+              Contact Us
+            </h4>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <HiOutlineMapPin className="mt-0.5 h-5 w-5 shrink-0 text-primary-300" />
-                <span className="text-sm text-gray-300">
-                  {contact.address}
-                </span>
-              </li>
-              <li>
-                <a
-                  href={`tel:${contact.phone}`}
-                  className="flex items-center gap-3 text-sm text-gray-300 hover:text-primary-300 transition-colors"
-                >
-                  <HiOutlinePhone className="h-5 w-5 shrink-0 text-primary-300" />
-                  {contact.phone}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`mailto:${contact.email}`}
-                  className="flex items-center gap-3 text-sm text-gray-300 hover:text-primary-300 transition-colors"
-                >
-                  <HiOutlineEnvelope className="h-5 w-5 shrink-0 text-primary-300" />
-                  {contact.email}
-                </a>
-              </li>
+              {contact.address && (
+                <li className="flex items-start gap-3">
+                  <HiOutlineMapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary-400" />
+                  <span className="text-sm text-primary-200/70">{contact.address}</span>
+                </li>
+              )}
+              {contact.phone && (
+                <li>
+                  <a
+                    href={`tel:${contact.phone}`}
+                    className="flex items-center gap-3 text-sm text-primary-200/70 hover:text-white transition-colors"
+                  >
+                    <HiOutlinePhone className="h-4 w-4 shrink-0 text-primary-400" />
+                    {contact.phone}
+                  </a>
+                </li>
+              )}
+              {contact.email && (
+                <li>
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="flex items-center gap-3 text-sm text-primary-200/70 hover:text-white transition-colors"
+                  >
+                    <HiOutlineEnvelope className="h-4 w-4 shrink-0 text-primary-400" />
+                    {contact.email}
+                  </a>
+                </li>
+              )}
             </ul>
           </div>
         </div>
       </div>
 
-      {/* Copyright */}
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 py-6">
-          <p className="text-center text-sm text-gray-400">
-            &copy; {currentYear} {siteConfig.name}. All rights reserved.
+        <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-xs text-primary-200/40">
+            &copy; {currentYear} nictic.travel. All rights reserved.
+          </p>
+          <p className="text-xs text-primary-200/40">
+            Crafted with care in Sri Lanka
           </p>
         </div>
       </div>

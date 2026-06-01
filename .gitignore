@@ -1,3 +1,7 @@
+# PocketBase local data
+pb_data
+pb_migrations
+
 # Environment variables
 .env
 .env.local
@@ -27,3 +31,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# PocketBase binary
+pocketbase

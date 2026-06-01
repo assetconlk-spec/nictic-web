@@ -38,8 +38,7 @@ export default function TourCard({ tour, index = 0 }) {
           {/* Price + CTA */}
           <div className="flex items-center justify-between">
             <div>
-              <span className="text-sm text-text-secondary">From </span>
-              <span className="text-2xl font-bold text-primary-600">${tour.price}</span>
+              <span className="text-2xl font-bold text-primary-600">{tour.price}</span>
             </div>
             <span className="rounded-lg bg-primary-600 px-4 py-2 text-sm font-semibold text-white transition group-hover:bg-primary-700">
               View Details

@@ -26,8 +26,8 @@ export default function GalleryAdminPage() {
   const fetchImages = async () => {
     const data = await pb
       .collection("gallery")
-      .getFullList({ sort: "-created" });
-    setImages(data.map((r) => ({ ...r, src: pb.files.getURL(r, r.image) })));
+      .getFullList({ sort: "-id" });
+    setImages(data.map((r) => ({ ...r, src: r.image ? pb.files.getURL(r, r.image) : r.image_url || '' })));
     setLoading(false);
   };
 

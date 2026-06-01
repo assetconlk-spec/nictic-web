@@ -10,7 +10,7 @@ export function useCategories() {
 
   useEffect(() => {
     pb.collection("categories")
-      .getFullList({ sort: "+created", requestKey: null })
+      .getFullList({ sort: "id", requestKey: null })
       .then((records) => {
         if (records.length > 0) {
           setCategories(records.map((r) => r.name));

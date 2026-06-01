@@ -17,15 +17,15 @@ export default function ContactPage() {
   const contact = useContactInfo();
 
   const contactInfo = [
-    { icon: HiOutlinePhone, title: "Phone", value: contact.phone, href: `tel:${contact.phone}` },
-    { icon: FaWhatsapp, title: "WhatsApp", value: contact.whatsapp, href: `https://wa.me/${contact.whatsapp.replace(/\s+/g, "")}` },
-    { icon: HiOutlineEnvelope, title: "Email", value: contact.email, href: `mailto:${contact.email}` },
-    { icon: HiOutlineMapPin, title: "Address", value: contact.address, href: null },
-    { icon: HiOutlineClock, title: "Office Hours", value: contact.office_hours, href: null },
-  ];
+    contact.phone && { icon: HiOutlinePhone, title: "Phone", value: contact.phone, href: `tel:${contact.phone}` },
+    contact.whatsapp && { icon: FaWhatsapp, title: "WhatsApp", value: contact.whatsapp, href: `https://wa.me/${contact.whatsapp.replace(/\s+/g, "")}` },
+    contact.email && { icon: HiOutlineEnvelope, title: "Email", value: contact.email, href: `mailto:${contact.email}` },
+    contact.address && { icon: HiOutlineMapPin, title: "Address", value: contact.address, href: null },
+    contact.office_hours && { icon: HiOutlineClock, title: "Office Hours", value: contact.office_hours, href: null },
+  ].filter(Boolean);
 
   useEffect(() => {
-    document.title = "Contact Us | Gajalanka Tours";
+    document.title = "Contact Us | nictic.travel";
   }, []);
 
   const [form, setForm] = useState({

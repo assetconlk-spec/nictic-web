@@ -11,45 +11,44 @@ export default function Navbar() {
   const scrollY = useScrollPosition();
   const { pathname } = useLocation();
   const isHome = pathname === "/";
-  const scrolled = scrollY > 50;
-  const navBg = scrolled || !isHome ? "bg-white shadow-md" : "bg-transparent";
-
-  const textColor = scrolled || !isHome ? "text-text-primary" : "text-white";
-  const activeLinkColor = isHome && !scrolled ? "text-white underline underline-offset-4" : "text-accent";
+  const scrolled = scrollY > 60;
+  const transparent = isHome && !scrolled;
 
   return (
     <>
       <header
-        className={`fixed left-0 right-0 z-30 transition-all duration-300 ${isHome && !scrolled ? "top-0 lg:top-10" : "top-0"} ${navBg}`}
+        className={`fixed left-0 right-0 top-0 z-30 transition-all duration-300 ${
+          transparent ? "bg-transparent" : "bg-white border-b border-gray-100 shadow-sm"
+        }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
-          <Link to="/" className="flex items-center gap-1.5 text-2xl font-bold transition-colors">
-            <img
-              src="/images/aboutUs/logo-high-res.png"
-              alt=""
-              className="h-11 w-auto transition-all duration-300"
-              style={
-                isHome && !scrolled
-                  ? { filter: "brightness(0) invert(1)" }
-                  : { filter: "brightness(0) saturate(100%) invert(18%) sepia(100%) hue-rotate(174deg) saturate(350%) brightness(77%)" }
-              }
-            />
-            <span className={isHome && !scrolled ? "text-white" : "text-primary-900"}>Gajalanka</span>
-            <span className={isHome && !scrolled ? "text-white/80" : "text-accent"}>Tours</span>
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+          {/* Brand */}
+          <Link to="/" className="flex items-center gap-1">
+            <span className={`text-2xl font-extrabold tracking-tight transition-colors ${transparent ? "text-white" : "text-primary-600"}`}>
+              nictic
+            </span>
+            <span className={`text-2xl font-light transition-colors ${transparent ? "text-white/60" : "text-primary-400"}`}>
+              .travel
+            </span>
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          {/* Desktop nav */}
+          <nav className="hidden items-center gap-7 lg:flex">
             {navLinks.map((link) => {
               const isActive =
-                link.path === "/"
-                  ? pathname === link.path
-                  : pathname.startsWith(link.path);
+                link.path === "/" ? pathname === link.path : pathname.startsWith(link.path);
               return (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-base font-bold transition-colors hover:text-accent focus:outline-none ${
-                    isActive ? activeLinkColor : textColor
+                  className={`text-sm font-semibold tracking-wide transition-colors ${
+                    isActive
+                      ? transparent
+                        ? "text-white underline underline-offset-4"
+                        : "text-primary-600 underline underline-offset-4"
+                      : transparent
+                      ? "text-white/80 hover:text-white"
+                      : "text-text-secondary hover:text-primary-600"
                   }`}
                 >
                   {link.label}
@@ -61,9 +60,10 @@ export default function Navbar() {
             </Button>
           </nav>
 
+          {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(true)}
-            className={`rounded-lg p-2 lg:hidden ${textColor}`}
+            className={`rounded-lg p-2 lg:hidden transition-colors ${transparent ? "text-white" : "text-text-primary hover:bg-gray-100"}`}
           >
             <HiBars3 className="h-6 w-6" />
           </button>

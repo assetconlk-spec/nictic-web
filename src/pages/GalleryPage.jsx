@@ -10,13 +10,13 @@ import PageLoader from "../components/shared/PageLoader";
 const PAGE_SIZE = 15;
 
 function mapRecord(r) {
-  return { ...r, src: pb.files.getURL(r, r.image) };
+  return { ...r, src: r.image ? pb.files.getURL(r, r.image) : r.image_url || '' };
 }
 
 export default function GalleryPage() {
   const banner = usePageBanner("gallery", "/images/aboutUs/gallery.jpeg", 60);
 
-  useEffect(() => { document.title = "Gallery | Gajalanka Tours"; }, []);
+  useEffect(() => { document.title = "Gallery | nictic.travel"; }, []);
 
   const [active, setActive] = useState("All");
   const [lightboxIndex, setLightboxIndex] = useState(-1);
@@ -35,7 +35,7 @@ export default function GalleryPage() {
   const loadPage = useCallback(async (pageNum, category) => {
     const filter = category !== "All" ? `category="${category}"` : "";
     return pb.collection("gallery").getList(pageNum, PAGE_SIZE, {
-      sort: "-created",
+      sort: "-id",
       filter,
       requestKey: null,
     });

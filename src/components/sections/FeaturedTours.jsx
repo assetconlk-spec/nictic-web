@@ -9,7 +9,7 @@ export default function FeaturedTours() {
 
   useEffect(() => {
     pb.collection("tours")
-      .getFullList({ sort: "-created" })
+      .getFullList({ sort: "-id" })
       .then((data) => {
         setTours(
           data.map((r) => ({
@@ -27,9 +27,9 @@ export default function FeaturedTours() {
     <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4">
         <SectionHeading
-          subtitle="Our Tours"
+          subtitle="Tour Packages"
           title="Signature Sri Lankan Experiences"
-          description="Take a slice of Sri Lanka with you through unforgettable memories, authentic experiences, and the warmth of its people."
+          description="Hand-picked journeys through ancient wonders, pristine beaches, and vibrant culture."
         />
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {tours.map((tour, i) => (

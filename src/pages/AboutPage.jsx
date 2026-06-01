@@ -53,7 +53,7 @@ export default function AboutPage() {
   const [storyOverlay, setStoryOverlay] = useState(FALLBACK_OVERLAY);
 
   useEffect(() => {
-    document.title = "About Us | Gajalanka Tours ";
+    document.title = "About Us | nictic.travel";
     pb.collection("about_preview")
       .getFirstListItem("", { requestKey: null })
       .then((record) => {

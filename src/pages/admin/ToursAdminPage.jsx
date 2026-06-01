@@ -713,7 +713,7 @@ export default function ToursAdminPage() {
   };
 
   const fetchTours = async () => {
-    const data = await pb.collection("tours").getFullList({ sort: "-created" });
+    const data = await pb.collection("tours").getFullList({ sort: "-id" });
     setTours(data.map(normalizeTour));
     setLoading(false);
   };

@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { motion, AnimatePresence } from "motion/react";
-import Button from "../ui/Button";
+import { Link } from "react-router";
 import { pb } from "../../lib/pocketbase";
 import PageLoader from "../shared/PageLoader";
 
@@ -27,8 +27,9 @@ export default function HeroSlider() {
       .catch(() => {})
       .finally(() => setIsLoading(false));
   }, []);
+
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
-    Autoplay({ delay: 5000, stopOnInteraction: false }),
+    Autoplay({ delay: 6000, stopOnInteraction: false }),
   ]);
 
   const scrollTo = useCallback(
@@ -46,109 +47,137 @@ export default function HeroSlider() {
   return (
     <>
       {isLoading && <PageLoader fullScreen />}
-      <section className="relative flex-1 overflow-hidden">
+      <section className="relative h-screen min-h-150 overflow-hidden">
+
+        {/* Slides */}
         <div className="h-full" ref={emblaRef}>
           <div className="flex h-full">
             {slides.map((slide, index) => (
-              <div
-                key={index}
-                className="relative h-full min-w-0 flex-[0_0_100%]"
-              >
+              <div key={index} className="relative h-full min-w-0 flex-[0_0_100%]">
                 <img
                   src={slide.image}
                   alt={slide.title}
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/30 to-black/70" />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Content overlay */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="mx-auto max-w-4xl px-4 text-center text-white">
-            <div className="mb-6 flex min-h-30 items-center justify-center">
-              <AnimatePresence mode="wait">
-                <motion.h1
-                  key={`title-${selectedIndex}`}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.6 }}
-                  className="text-4xl font-extrabold leading-tight md:text-5xl lg:text-5xl 2xl:text-6xl"
-                >
-                  {slides[selectedIndex]?.title}
-                </motion.h1>
-              </AnimatePresence>
-            </div>
-            <div className="mb-8 flex min-h-16 items-center justify-center">
-              <AnimatePresence mode="wait">
-                <motion.p
-                  key={`subtitle-${selectedIndex}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  className="text-lg text-gray-200 md:text-xl"
-                >
-                  {slides[selectedIndex]?.subtitle}
-                </motion.p>
-              </AnimatePresence>
-            </div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
-            >
-              <Button to="/tours" variant="accent" size="lg">
-                Explore Tours
-              </Button>
-              <Button to="/contact" variant="white" size="lg">
-                Plan Your Trip
-              </Button>
-            </motion.div>
+        {/* Dark overlay — heavier at bottom-left for text legibility */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/85 via-black/40 to-black/20" />
+        <div className="absolute inset-0 bg-linear-to-r from-black/60 via-transparent to-transparent" />
+
+        {/* Bottom-left editorial content */}
+        <div className="absolute bottom-0 left-0 right-0 px-6 pb-20 md:px-12 lg:px-16 lg:pb-24 lg:max-w-4xl">
+
+          {/* Slide counter label */}
+          <motion.p
+            key={`label-${selectedIndex}`}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-white/60"
+          >
+            {String(selectedIndex + 1).padStart(2, "0")} — Discover Sri Lanka
+          </motion.p>
+
+          {/* Main title */}
+          <div className="mb-4 min-h-28 md:min-h-32 lg:min-h-36">
+            <AnimatePresence mode="wait">
+              <motion.h1
+                key={`title-${selectedIndex}`}
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+                className="text-4xl font-extrabold leading-[1.1] text-white md:text-5xl lg:text-6xl"
+              >
+                {slides[selectedIndex]?.title}
+              </motion.h1>
+            </AnimatePresence>
           </div>
+
+          {/* Subtitle */}
+          <div className="mb-8 min-h-10">
+            <AnimatePresence mode="wait">
+              <motion.p
+                key={`subtitle-${selectedIndex}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.55, delay: 0.1, ease: "easeOut" }}
+                className="text-base text-gray-300 md:text-lg max-w-xl"
+              >
+                {slides[selectedIndex]?.subtitle}
+              </motion.p>
+            </AnimatePresence>
+          </div>
+
+          {/* Text-link CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex items-center gap-8"
+          >
+            <Link
+              to="/tours"
+              className="group inline-flex items-center gap-3 text-sm font-semibold text-white"
+            >
+              <span className="border-b border-white/60 pb-0.5 transition-colors group-hover:border-white">
+                Explore Tours
+              </span>
+              <svg
+                className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+            <Link
+              to="/contact"
+              className="text-sm font-medium text-white/60 transition-colors hover:text-white"
+            >
+              Plan Your Trip
+            </Link>
+          </motion.div>
         </div>
 
-        {/* Slide indicators */}
-        <div className="absolute bottom-28 left-1/2 z-10 flex -translate-x-1/2 gap-3">
+        {/* Slide indicators — bottom right */}
+        <div className="absolute bottom-8 right-6 z-10 flex items-center gap-3 md:right-12 lg:right-16">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => scrollTo(i)}
-              className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                i === selectedIndex
-                  ? "w-8 bg-white"
-                  : "w-4 bg-white/40 hover:bg-white/80"
-              }`}
               aria-label={`Go to slide ${i + 1}`}
+              className={`cursor-pointer rounded-full transition-all duration-300 ${
+                i === selectedIndex
+                  ? "h-2 w-8 bg-white"
+                  : "h-2 w-2 bg-white/40 hover:bg-white/70"
+              }`}
             />
           ))}
         </div>
 
-        {/* Scroll down button */}
-        <motion.button
-          onClick={() => window.scrollBy({ top: 700, behavior: "smooth" })}
-          className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 cursor-pointer"
+        {/* Vertical scroll hint */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          aria-label="Scroll down"
+          transition={{ delay: 1.2 }}
         >
-          <div className="flex h-10 w-6 items-start justify-center rounded-full border-2 border-white/70 p-1">
+          <div className="flex h-10 w-6 items-start justify-center rounded-full border border-white/40 p-1.5">
             <motion.div
-              className="h-2 w-1 rounded-full bg-white"
-              animate={{ y: [0, 10, 0] }}
-              transition={{
-                duration: 1.4,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
+              className="h-1.5 w-0.5 rounded-full bg-white/80"
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
             />
           </div>
-        </motion.button>
+        </motion.div>
       </section>
     </>
   );

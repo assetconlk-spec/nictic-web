@@ -16,7 +16,7 @@ export default function InquiriesPage() {
   const [deleteTarget, setDeleteTarget] = useState(null)
 
   useEffect(() => {
-    pb.collection('inquiries').getFullList({ sort: '-created' }).then((data) => {
+    pb.collection('inquiries').getFullList({ sort: '-id' }).then((data) => {
       setInquiries(data)
       setLoading(false)
     })

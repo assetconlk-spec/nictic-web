@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import HeroSlider from "../components/sections/HeroSlider";
+import ServicesOverview from "../components/sections/ServicesOverview";
 import FeaturedTours from "../components/sections/FeaturedTours";
+import TaxiSection from "../components/sections/TaxiSection";
+import ActivitiesSection from "../components/sections/ActivitiesSection";
 import DestinationsSection from "../components/sections/DestinationsSection";
-import ExperiencesSection from "../components/sections/ExperiencesSection";
 import WhyChooseUs from "../components/sections/WhyChooseUs";
 import GalleryPreview from "../components/sections/GalleryPreview";
-import EditorialSection from "../components/sections/EditorialSection";
 
 export default function HomePage() {
   useEffect(() => {
@@ -15,12 +16,13 @@ export default function HomePage() {
   return (
     <>
       <HeroSlider />
+      <ServicesOverview />
       <FeaturedTours />
+      <TaxiSection />
+      <ActivitiesSection />
       <DestinationsSection />
-      <ExperiencesSection />
       <WhyChooseUs />
       <GalleryPreview />
-      <EditorialSection />
     </>
   );
 }

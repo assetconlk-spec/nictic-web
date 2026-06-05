@@ -1,7 +1,8 @@
 export const navLinks = [
-  { label: "Home", path: "/" },
-  { label: "Tours", path: "/tours" },
-  { label: "Gallery", path: "/gallery" },
-  { label: "About", path: "/about" },
-  { label: "Contact", path: "/contact" },
+  { label: "Home",         path: "/" },
+  { label: "Itineraries",  path: "/tours" },
+  { label: "Taxi",         path: "/taxi" },
+  { label: "Activities",   path: "/activities" },
+  { label: "Gallery",      path: "/gallery" },
+  { label: "Contact",      path: "/contact" },
 ];

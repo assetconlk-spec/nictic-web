@@ -69,7 +69,7 @@ export default function HeroSlider() {
         <div className="absolute inset-0 bg-linear-to-r from-black/60 via-transparent to-transparent" />
 
         {/* Bottom-left editorial content */}
-        <div className="absolute bottom-0 left-0 right-0 px-6 pb-20 md:px-12 lg:px-16 lg:pb-24 lg:max-w-4xl">
+        <div className="absolute bottom-0 left-0 right-0 px-6 pb-32 md:px-12 lg:px-16 lg:pb-36 lg:max-w-4xl">
 
           {/* Slide counter label */}
           <motion.p
@@ -163,19 +163,33 @@ export default function HeroSlider() {
           ))}
         </div>
 
-        {/* Vertical scroll hint */}
+        {/* Service tab strip — bottom bar */}
         <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2 }}
+          className="absolute bottom-0 left-0 right-0 z-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
         >
-          <div className="flex h-10 w-6 items-start justify-center rounded-full border border-white/40 p-1.5">
-            <motion.div
-              className="h-1.5 w-0.5 rounded-full bg-white/80"
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            />
+          <div className="mx-auto max-w-7xl px-6 pb-6 md:px-12 lg:px-16">
+            <div className="flex gap-2 overflow-x-auto scrollbar-hide">
+              {[
+                { label: "Itineraries", icon: "🗺️", to: "/tours",      desc: "Multi-day tour packages" },
+                { label: "Taxi",        icon: "🚖", to: "/taxi",       desc: "Airport & city transfers" },
+                { label: "Activities",  icon: "🏄", to: "/activities", desc: "Adventures & experiences" },
+              ].map((tab) => (
+                <Link
+                  key={tab.label}
+                  to={tab.to}
+                  className="group flex shrink-0 items-center gap-3 rounded-xl bg-white/10 px-5 py-3.5 backdrop-blur-md border border-white/20 transition-all hover:bg-primary-500 hover:border-primary-500"
+                >
+                  <span className="text-xl">{tab.icon}</span>
+                  <div>
+                    <p className="text-sm font-bold text-white leading-none">{tab.label}</p>
+                    <p className="mt-0.5 text-xs text-white/60 group-hover:text-white/80">{tab.desc}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </motion.div>
       </section>

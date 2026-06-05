@@ -6,6 +6,8 @@ import AdminLayout from "./components/admin/AdminLayout";
 import HomePage from "./pages/HomePage";
 import ToursPage from "./pages/ToursPage";
 import TourDetailPage from "./pages/TourDetailPage";
+import TaxiPage from "./pages/TaxiPage";
+import ActivitiesPage from "./pages/ActivitiesPage";
 import GalleryPage from "./pages/GalleryPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
@@ -32,7 +34,9 @@ export default function App() {
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
             <Route path="tours" element={<ToursPage />} />
-          <Route path="tours/:slug" element={<TourDetailPage />} />
+            <Route path="tours/:slug" element={<TourDetailPage />} />
+            <Route path="taxi" element={<TaxiPage />} />
+            <Route path="activities" element={<ActivitiesPage />} />
             <Route path="gallery" element={<GalleryPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="contact" element={<ContactPage />} />

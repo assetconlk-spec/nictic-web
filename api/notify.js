@@ -18,7 +18,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Gajalanka Tours <hello@gajalankatours.com>',
+        from: 'nictic.travel <hello@gajalankatours.com>',
         to: ['hello@gajalankatours.com'],
         subject: `New Inquiry: ${subject || '(no subject)'}`,
         html: `

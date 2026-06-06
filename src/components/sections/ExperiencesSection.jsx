@@ -7,37 +7,37 @@ const experiences = [
     category: "Cultural",
     title: "Cultural Immersion",
     description: "Ancient temples, colonial forts, and sacred cities spanning 2,500 years of history.",
-    image: "https://images.unsplash.com/photo-1588598198321-9735fd52c145?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1704798690646-92524b61ce03?w=800&q=80",
   },
   {
     category: "Beach",
     title: "Beach & Coast",
     description: "Pristine shores from the sun-soaked south to the turquoise east coast.",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1580910527739-556eb89f9d65?w=800&q=80",
   },
   {
     category: "Adventure",
     title: "Adventure & Trails",
     description: "Trek misty peaks, cycle through tea country, and ride the world-famous scenic railway.",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1578519050142-afb511e518de?w=800&q=80",
   },
   {
     category: "Wildlife",
     title: "Wildlife Safari",
     description: "Spot leopards, elephants, and blue whales roaming free in their natural habitats.",
-    image: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1621847473222-d85c022cbf07?w=800&q=80",
   },
   {
     category: "Wellness",
     title: "Ayurveda & Wellness",
     description: "Ancient healing traditions, yoga retreats, and award-winning spa sanctuaries.",
-    image: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1585171328560-947fbd92d6f0?w=800&q=80",
   },
   {
     category: "Culinary",
     title: "Culinary Journeys",
     description: "Spice markets, cooking classes, and street food that tells a thousand stories.",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1609681980718-340e7f4b11d7?w=800&q=80",
   },
 ];
 

@@ -1,18 +1,30 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router";
 import { HiBars3 } from "react-icons/hi2";
-import { navLinks } from "../../data/navigation";
+import { useTranslation } from "react-i18next";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import Button from "../ui/Button";
 import MobileMenu from "./MobileMenu";
+import LanguageSwitcher from "../ui/LanguageSwitcher";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const scrollY = useScrollPosition();
   const { pathname } = useLocation();
+  const { t } = useTranslation();
+
   const isHome = pathname === "/";
   const scrolled = scrollY > 60;
   const transparent = isHome && !scrolled;
+
+  const navLinks = [
+    { label: t("nav.home"),        path: "/" },
+    { label: t("nav.itineraries"), path: "/tours" },
+    { label: t("nav.taxi"),        path: "/taxi" },
+    { label: t("nav.activities"),  path: "/activities" },
+    { label: t("nav.gallery"),     path: "/gallery" },
+    { label: t("nav.contact"),     path: "/contact" },
+  ];
 
   return (
     <>
@@ -55,18 +67,24 @@ export default function Navbar() {
                 </Link>
               );
             })}
+
+            <LanguageSwitcher transparent={transparent} />
+
             <Button to="/contact" variant="accent" size="sm">
-              Book Now
+              {t("nav.bookNow")}
             </Button>
           </nav>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setMobileOpen(true)}
-            className={`rounded-lg p-2 lg:hidden transition-colors ${transparent ? "text-white" : "text-text-primary hover:bg-gray-100"}`}
-          >
-            <HiBars3 className="h-6 w-6" />
-          </button>
+          {/* Mobile right side */}
+          <div className="flex items-center gap-2 lg:hidden">
+            <LanguageSwitcher transparent={transparent} />
+            <button
+              onClick={() => setMobileOpen(true)}
+              className={`rounded-lg p-2 transition-colors ${transparent ? "text-white" : "text-text-primary hover:bg-gray-100"}`}
+            >
+              <HiBars3 className="h-6 w-6" />
+            </button>
+          </div>
         </div>
       </header>
 

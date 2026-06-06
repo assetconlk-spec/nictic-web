@@ -12,8 +12,7 @@ const activities = [
     difficulty: "Beginner friendly",
     price: "From $45",
     category: "Water",
-    emoji: "🤿",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=700&q=80",
     description: "Explore colourful coral reefs and shipwrecks in the warm Indian Ocean waters off Hikkaduwa.",
   },
   {
@@ -23,8 +22,7 @@ const activities = [
     difficulty: "All levels",
     price: "From $30",
     category: "Water",
-    emoji: "🏄",
-    image: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1583653319049-4db347571740?w=700&q=80",
     description: "Sri Lanka's warm waves are perfect for beginners and seasoned surfers alike. Board & instructor included.",
   },
   {
@@ -34,8 +32,7 @@ const activities = [
     difficulty: "Easy",
     price: "From $35",
     category: "Wildlife",
-    emoji: "🐋",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1568430328012-21ed450453ea?w=700&q=80",
     description: "Spot blue whales, sperm whales, and spinner dolphins on an early morning boat cruise from Mirissa harbour.",
   },
   {
@@ -45,8 +42,7 @@ const activities = [
     difficulty: "Moderate",
     price: "From $25",
     category: "Hiking",
-    emoji: "🥾",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1598955890270-d77cdb06d2bb?w=700&q=80",
     description: "Ascend 5,200 steps to the sacred Sri Pada peak. Start at midnight to catch the spectacular sunrise.",
   },
   {
@@ -56,8 +52,7 @@ const activities = [
     difficulty: "Moderate",
     price: "From $20",
     category: "Hiking",
-    emoji: "⛰️",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1578519050142-afb511e518de?w=700&q=80",
     description: "Trek through tea estates and jungle to reach Ella Rock's summit with panoramic views of the valley.",
   },
   {
@@ -67,8 +62,7 @@ const activities = [
     difficulty: "Thrilling",
     price: "From $40",
     category: "Adventure",
-    emoji: "🚣",
-    image: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1566766189268-ecac9118f2b7?w=700&q=80",
     description: "Tackle Grade 3–4 rapids on the Kelani River, the filming location of The Bridge on the River Kwai.",
   },
   {
@@ -78,8 +72,7 @@ const activities = [
     difficulty: "Easy",
     price: "From $180",
     category: "Adventure",
-    emoji: "🎈",
-    image: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1580794749460-76f97b7180d8?w=700&q=80",
     description: "Drift silently over the Cultural Triangle at sunrise — ancient rock fortresses, jungle and lakes spread beneath you.",
   },
   {
@@ -89,8 +82,7 @@ const activities = [
     difficulty: "Easy",
     price: "From $65",
     category: "Wildlife",
-    emoji: "🐆",
-    image: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1621847473222-d85c022cbf07?w=700&q=80",
     description: "Home to the world's highest density of leopards. Spot elephants, crocodiles, and rare birds on a jeep safari.",
   },
   {
@@ -100,8 +92,7 @@ const activities = [
     difficulty: "Easy",
     price: "From $50",
     category: "Wildlife",
-    emoji: "🐘",
-    image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1627401099591-4772d63b86a4?w=700&q=80",
     description: "Witness hundreds of wild elephants gather at the Minneriya reservoir — one of Asia's greatest wildlife spectacles.",
   },
   {
@@ -111,8 +102,7 @@ const activities = [
     difficulty: "Fun & easy",
     price: "From $35",
     category: "Cultural",
-    emoji: "🍛",
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1609681980718-340e7f4b11d7?w=700&q=80",
     description: "Learn to cook authentic Sri Lankan curries, sambols, and hoppers with a local family. Eat what you cook!",
   },
   {
@@ -122,8 +112,7 @@ const activities = [
     difficulty: "Beginner friendly",
     price: "From $25",
     category: "Water",
-    emoji: "🐠",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1525849306000-cc26ceb5c1d7?w=700&q=80",
     description: "Swim among coral reefs teeming with reef sharks, sea turtles, and tropical fish off the east coast.",
   },
   {
@@ -133,8 +122,7 @@ const activities = [
     difficulty: "Thrilling",
     price: "From $30",
     category: "Adventure",
-    emoji: "🪂",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=700&q=80",
     description: "Soar through the rainforest canopy on zip lines stretching hundreds of metres across the valley.",
   },
 ];
@@ -143,9 +131,6 @@ const categories = ["All", "Water", "Wildlife", "Hiking", "Adventure", "Cultural
 const categoryColors = {
   Water: "bg-blue-500", Wildlife: "bg-green-600",
   Hiking: "bg-amber-600", Adventure: "bg-rose-500", Cultural: "bg-purple-600",
-};
-const categoryIcons = {
-  All: "🌍", Water: "🌊", Wildlife: "🦁", Hiking: "🥾", Adventure: "⚡", Cultural: "🏛️",
 };
 
 function ActivityCard({ act, index }) {
@@ -157,9 +142,6 @@ function ActivityCard({ act, index }) {
           <img src={act.image} alt={act.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
           <span className={`absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-bold text-white ${categoryColors[act.category]}`}>
             {act.category}
-          </span>
-          <span className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-lg shadow-sm">
-            {act.emoji}
           </span>
         </div>
 
@@ -174,7 +156,7 @@ function ActivityCard({ act, index }) {
           <p className="mb-4 flex-1 text-sm leading-relaxed text-text-secondary">{act.description}</p>
 
           <div className="mb-4 flex flex-wrap gap-2">
-            <span className="rounded-lg bg-gray-50 px-2.5 py-1 text-xs font-medium text-text-secondary">⏱ {act.duration}</span>
+            <span className="rounded-lg bg-gray-50 px-2.5 py-1 text-xs font-medium text-text-secondary">{act.duration}</span>
             <span className="rounded-lg bg-gray-50 px-2.5 py-1 text-xs font-medium text-text-secondary">{act.difficulty}</span>
           </div>
 
@@ -211,7 +193,7 @@ export default function ActivitiesPage() {
       {/* ── Hero ── */}
       <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-gray-900">
         <img
-          src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=1600&q=80"
           alt="Activities Sri Lanka"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -259,7 +241,6 @@ export default function ActivitiesPage() {
                     active === cat ? "bg-primary-500 text-white shadow-sm" : "text-text-secondary hover:bg-gray-100"
                   }`}
                 >
-                  <span>{categoryIcons[cat]}</span>
                   {cat}
                   <span className={`rounded-full px-1.5 py-0.5 text-xs font-bold ${active === cat ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500"}`}>
                     {count}
@@ -289,7 +270,7 @@ export default function ActivitiesPage() {
       {/* ── CTA ── */}
       <section className="relative overflow-hidden bg-rose-600 py-20">
         <div className="absolute inset-0 opacity-10">
-          <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=1200&q=60" alt="" className="h-full w-full object-cover" />
+          <img src="https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=1200&q=60" alt="" className="h-full w-full object-cover" />
         </div>
         <div className="relative mx-auto max-w-3xl px-4 text-center">
           <h2 className="mb-4 text-3xl font-extrabold text-white md:text-4xl">Don't See What You're After?</h2>

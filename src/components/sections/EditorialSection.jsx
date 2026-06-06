@@ -6,31 +6,31 @@ const editorials = [
   {
     label: "Top Picks",
     title: "Best Beaches in Sri Lanka",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1580910527739-556eb89f9d65?w=700&q=80",
     to: "/tours",
   },
   {
     label: "Hidden Gems",
     title: "Scenic Train Journeys",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=700&q=80",
     to: "/tours",
   },
   {
     label: "Adventure",
     title: "Top Treks & Hikes",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1578519050142-afb511e518de?w=700&q=80",
     to: "/tours",
   },
   {
     label: "Wildlife",
     title: "Best Safari Parks",
-    image: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1621847473222-d85c022cbf07?w=700&q=80",
     to: "/tours",
   },
   {
     label: "Culture",
     title: "UNESCO Heritage Sites",
-    image: "https://images.unsplash.com/photo-1588598198321-9735fd52c145?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1612862862126-865765df2ded?w=700&q=80",
     to: "/tours",
   },
 ];

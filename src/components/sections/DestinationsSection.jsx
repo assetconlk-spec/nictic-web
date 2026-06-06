@@ -6,62 +6,62 @@ const destinations = [
   {
     name: "Sigiriya",
     tagline: "Ancient Lion Rock Fortress",
-    image: "https://images.unsplash.com/photo-1588598198321-9735fd52c145?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1612862862126-865765df2ded?w=700&q=80",
   },
   {
     name: "Galle",
     tagline: "Dutch Colonial Fort & Beaches",
-    image: "https://images.unsplash.com/photo-1546190255-431e2ed00460?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1704797390682-76479a29dc9a?w=700&q=80",
   },
   {
     name: "Ella",
     tagline: "Nine Arches & Misty Mountains",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=700&q=80",
   },
   {
     name: "Kandy",
     tagline: "Temple of the Sacred Tooth",
-    image: "https://images.unsplash.com/photo-1567745219985-db1564fa7a0f?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1562698013-ac13558052cd?w=700&q=80",
   },
   {
     name: "Mirissa",
     tagline: "Whale Watching & Golden Sands",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1580910527739-556eb89f9d65?w=700&q=80",
   },
   {
     name: "Yala",
     tagline: "Leopard & Elephant Safaris",
-    image: "https://images.unsplash.com/photo-1564760055775-d63b17a55c44?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1621847473222-d85c022cbf07?w=700&q=80",
   },
   {
     name: "Nuwara Eliya",
     tagline: "Emerald Tea Plantations",
-    image: "https://images.unsplash.com/photo-1542401886-65d6c61db217?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1585171328560-947fbd92d6f0?w=700&q=80",
   },
   {
     name: "Colombo",
     tagline: "Vibrant Capital City",
-    image: "https://images.unsplash.com/photo-1589474823155-cdae2a26c0e5?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1623595289196-007a22dd8560?w=700&q=80",
   },
   {
     name: "Trincomalee",
     tagline: "Pristine East Coast Beaches",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1525849306000-cc26ceb5c1d7?w=700&q=80",
   },
   {
     name: "Dambulla",
     tagline: "Golden Cave Temples",
-    image: "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1704798690646-92524b61ce03?w=700&q=80",
   },
   {
     name: "Polonnaruwa",
     tagline: "Medieval Ancient Capital",
-    image: "https://images.unsplash.com/photo-1548013146-72479768bada?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1566299589192-bdf059d4b0be?w=700&q=80",
   },
   {
     name: "Arugam Bay",
     tagline: "World-Class Surf & Seafood",
-    image: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=700&q=80",
+    image: "https://images.unsplash.com/photo-1583653319049-4db347571740?w=700&q=80",
   },
 ];
 

@@ -5,43 +5,39 @@ import AnimatedSection from "../shared/AnimatedSection";
 const vehicles = [
   {
     name: "Tuk-tuk",
-    emoji: "🛺",
     capacity: "1–2 pax",
     ideal: "Local city tours, short hops",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1583653319049-4db347571740?w=500&q=80",
     tag: "Most Fun",
   },
   {
     name: "Sedan",
-    emoji: "🚗",
     capacity: "1–3 pax",
     ideal: "Airport transfers, city trips",
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1623595289196-007a22dd8560?w=500&q=80",
     tag: "Most Popular",
   },
   {
     name: "SUV",
-    emoji: "🚙",
     capacity: "1–4 pax",
     ideal: "Family trips, hill country",
-    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1550679193-d8ec2f2c3a25?w=500&q=80",
     tag: "Best Comfort",
   },
   {
     name: "Minivan",
-    emoji: "🚐",
     capacity: "5–12 pax",
     ideal: "Groups, long-distance tours",
-    image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=500&q=80",
+    image: "https://images.unsplash.com/photo-1704797390325-b057758d8c3d?w=500&q=80",
     tag: "Groups",
   },
 ];
 
 const services = [
-  { icon: "✈️", title: "Airport Pickup",   desc: "CMB & MRI — meet & greet, all hours" },
-  { icon: "🏨", title: "Airport Drop",     desc: "Hotel to airport, never miss a flight" },
-  { icon: "🏙️", title: "City Transfers",  desc: "Point-to-point across any city" },
-  { icon: "🛺", title: "Tuk-tuk Tours",   desc: "Half & full day local adventures" },
+  { title: "Airport Pickup",  desc: "CMB & MRI — meet & greet, all hours" },
+  { title: "Airport Drop",    desc: "Hotel to airport, never miss a flight" },
+  { title: "City Transfers",  desc: "Point-to-point across any city" },
+  { title: "Tuk-tuk Tours",   desc: "Half & full day local adventures" },
 ];
 
 export default function TaxiSection() {
@@ -69,12 +65,9 @@ export default function TaxiSection() {
             {/* Service list */}
             <div className="mb-8 grid grid-cols-2 gap-4">
               {services.map((s) => (
-                <div key={s.title} className="flex items-start gap-3 rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
-                  <span className="text-2xl">{s.icon}</span>
-                  <div>
-                    <p className="text-sm font-bold text-text-primary">{s.title}</p>
-                    <p className="mt-0.5 text-xs text-text-secondary leading-snug">{s.desc}</p>
-                  </div>
+                <div key={s.title} className="rounded-2xl border border-gray-100 bg-white p-4 shadow-sm">
+                  <p className="text-sm font-bold text-text-primary">{s.title}</p>
+                  <p className="mt-0.5 text-xs text-text-secondary leading-snug">{s.desc}</p>
                 </div>
               ))}
             </div>
@@ -108,7 +101,7 @@ export default function TaxiSection() {
                   key={v.name}
                   className="group relative overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-100 transition hover:shadow-lg hover:-translate-y-0.5 duration-300"
                 >
-                  <div className="aspect-[4/3] overflow-hidden">
+                  <div className="aspect-4/3 overflow-hidden">
                     <img
                       src={v.image}
                       alt={v.name}
@@ -120,10 +113,7 @@ export default function TaxiSection() {
                     {v.tag}
                   </span>
                   <div className="p-4">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-lg">{v.emoji}</span>
-                      <h4 className="font-bold text-text-primary">{v.name}</h4>
-                    </div>
+                    <h4 className="mb-1 font-bold text-text-primary">{v.name}</h4>
                     <p className="text-xs font-semibold text-primary-600 mb-0.5">{v.capacity}</p>
                     <p className="text-xs text-text-secondary leading-snug">{v.ideal}</p>
                   </div>

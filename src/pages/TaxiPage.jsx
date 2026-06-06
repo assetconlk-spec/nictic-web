@@ -6,7 +6,6 @@ const WA = "https://wa.me/94707485177";
 
 const services = [
   {
-    emoji: "✈️",
     title: "Airport Pickup",
     desc: "Meet & greet at Colombo (CMB) or Mattala (MRI). We track your flight and wait for you — no extra charge for delays.",
     features: ["Flight tracking included", "Name-board greeting", "24 / 7 availability"],
@@ -14,7 +13,6 @@ const services = [
     accent: "text-blue-600",
   },
   {
-    emoji: "🏨",
     title: "Airport Drop",
     desc: "Reach the airport stress-free. We pick you up from your hotel or villa and get you there with time to spare.",
     features: ["On-time guarantee", "All areas of Sri Lanka", "Luggage assistance"],
@@ -22,7 +20,6 @@ const services = [
     accent: "text-green-600",
   },
   {
-    emoji: "🏙️",
     title: "City & Intercity",
     desc: "Point-to-point transfers between any two cities or attractions. Colombo, Galle, Kandy, Ella — we cover it all.",
     features: ["Fixed price, no meter", "AC vehicles", "Flexible departure time"],
@@ -30,7 +27,6 @@ const services = [
     accent: "text-purple-600",
   },
   {
-    emoji: "🛺",
     title: "Tuk-tuk Tours",
     desc: "Experience Sri Lanka the local way. Half or full-day tuk-tuk adventures through markets, temples, and hidden streets.",
     features: ["Half & full day options", "Local driver-guide", "Most fun way to explore"],
@@ -41,51 +37,47 @@ const services = [
 
 const vehicles = [
   {
-    emoji: "🛺",
     name: "Tuk-tuk",
     capacity: "1 – 2 pax",
     luggage: "Small bags only",
     best: "Local sightseeing, short hops",
     tag: "Most Fun",
     tagColor: "bg-amber-500",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1583653319049-4db347571740?w=600&q=80",
   },
   {
-    emoji: "🚗",
     name: "Sedan",
     capacity: "1 – 3 pax",
     luggage: "2 – 3 suitcases",
     best: "Airport runs, city transfers",
     tag: "Most Popular",
     tagColor: "bg-primary-500",
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1623595289196-007a22dd8560?w=600&q=80",
   },
   {
-    emoji: "🚙",
     name: "SUV / CRV",
     capacity: "1 – 4 pax",
     luggage: "4 – 5 suitcases",
     best: "Family trips, hill country",
     tag: "Best Comfort",
     tagColor: "bg-green-600",
-    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1550679193-d8ec2f2c3a25?w=600&q=80",
   },
   {
-    emoji: "🚐",
     name: "Minivan",
     capacity: "5 – 12 pax",
     luggage: "Group luggage",
     best: "Group tours, long distance",
     tag: "Groups",
     tagColor: "bg-rose-500",
-    image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1704797390325-b057758d8c3d?w=600&q=80",
   },
 ];
 
 const steps = [
-  { num: "01", title: "Message Us", desc: "Send your pickup location, destination, date and time via WhatsApp.", emoji: "💬" },
-  { num: "02", title: "Get a Quote", desc: "We reply with a fixed price — no hidden fees, no surge pricing.", emoji: "💰" },
-  { num: "03", title: "Confirm & Relax", desc: "Pay on arrival. Your driver will be there on time, every time.", emoji: "✅" },
+  { num: "01", title: "Message Us",     desc: "Send your pickup location, destination, date and time via WhatsApp." },
+  { num: "02", title: "Get a Quote",    desc: "We reply with a fixed price — no hidden fees, no surge pricing." },
+  { num: "03", title: "Confirm & Relax", desc: "Pay on arrival. Your driver will be there on time, every time." },
 ];
 
 export default function TaxiPage() {
@@ -96,7 +88,7 @@ export default function TaxiPage() {
       {/* ── Hero ── */}
       <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-gray-900 pb-0">
         <img
-          src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1583653319049-4db347571740?w=1600&q=80"
           alt="Taxi Sri Lanka"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -148,7 +140,6 @@ export default function TaxiPage() {
             {services.map((s, i) => (
               <AnimatedSection key={s.title} delay={i * 0.1}>
                 <div className={`h-full rounded-2xl border p-6 ${s.color}`}>
-                  <span className="mb-4 block text-4xl">{s.emoji}</span>
                   <h3 className={`mb-2 text-lg font-bold ${s.accent}`}>{s.title}</h3>
                   <p className="mb-4 text-sm leading-relaxed text-text-secondary">{s.desc}</p>
                   <ul className="space-y-1.5">
@@ -179,8 +170,8 @@ export default function TaxiPage() {
                     <div className="absolute top-8 left-1/2 hidden h-0.5 w-full bg-gray-200 md:block" />
                   )}
                   <div className="relative flex flex-col items-center">
-                    <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 text-2xl shadow-lg">
-                      {step.emoji}
+                    <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 shadow-lg">
+                      <span className="text-lg font-extrabold text-white">{step.num}</span>
                     </div>
                     <span className="mb-1 text-xs font-bold uppercase tracking-widest text-primary-500">{step.num}</span>
                     <h3 className="mb-2 text-lg font-bold text-text-primary">{step.title}</h3>
@@ -210,14 +201,11 @@ export default function TaxiPage() {
                     <span className={`absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-bold text-white ${v.tagColor}`}>{v.tag}</span>
                   </div>
                   <div className="p-5">
-                    <div className="mb-3 flex items-center gap-2">
-                      <span className="text-2xl">{v.emoji}</span>
-                      <h3 className="text-lg font-bold text-text-primary">{v.name}</h3>
-                    </div>
+                    <h3 className="mb-3 text-lg font-bold text-text-primary">{v.name}</h3>
                     <div className="space-y-1.5 text-xs text-text-secondary">
-                      <p>👥 {v.capacity}</p>
-                      <p>🧳 {v.luggage}</p>
-                      <p>✅ {v.best}</p>
+                      <p>{v.capacity}</p>
+                      <p>{v.luggage}</p>
+                      <p>{v.best}</p>
                     </div>
                     <a
                       href={`${WA}?text=Hi%2C%20I%27d%20like%20to%20book%20a%20${encodeURIComponent(v.name)}`}

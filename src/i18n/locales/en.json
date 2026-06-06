@@ -1,0 +1,43 @@
+{
+  "nav": {
+    "home": "Home",
+    "itineraries": "Itineraries",
+    "taxi": "Taxi",
+    "activities": "Activities",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "bookNow": "Book Now"
+  },
+  "hero": {
+    "exploreTours": "Explore Tours",
+    "planYourTrip": "Plan Your Trip"
+  },
+  "slider": {
+    "counter": "Discover Sri Lanka"
+  },
+  "services": {
+    "itineraries": "Itineraries",
+    "itinerariesDesc": "Multi-day tour packages",
+    "taxi": "Taxi & Transfers",
+    "taxiDesc": "Airport & city transfers",
+    "activities": "Activities",
+    "activitiesDesc": "Adventures & experiences"
+  },
+  "common": {
+    "bookNow": "Book Now",
+    "learnMore": "Learn More",
+    "viewAll": "View All",
+    "bookOnWhatsApp": "Book on WhatsApp",
+    "viewAllTours": "View All Tours",
+    "viewAllActivities": "View All Activities",
+    "viewAllServices": "View All Services",
+    "exploreTours": "Explore tours",
+    "from": "From"
+  },
+  "footer": {
+    "tagline": "Your trusted travel partner in Sri Lanka.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "rights": "All rights reserved."
+  }
+}

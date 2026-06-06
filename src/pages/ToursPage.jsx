@@ -124,10 +124,6 @@ function TourCard({ tour, index }) {
 }
 
 /* ── Page ───────────────────────────────────────────────────── */
-const categoryIcons = {
-  All: "🌍", Cultural: "🏛️", Beach: "🏖️", Adventure: "🧗",
-  Wildlife: "🐘", Wellness: "🧘", Culinary: "🍛",
-};
 
 export default function ToursPage() {
   useEffect(() => { document.title = "Itineraries | nictic.travel"; }, []);
@@ -167,7 +163,7 @@ export default function ToursPage() {
       {/* ── Hero ── */}
       <section className="relative flex min-h-[60vh] items-end overflow-hidden bg-primary-900 pb-0">
         <img
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80"
+          src="https://images.unsplash.com/photo-1612862862126-865765df2ded?w=1600&q=80"
           alt="Sri Lanka"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -217,7 +213,6 @@ export default function ToursPage() {
                     : "text-text-secondary hover:bg-gray-100"
                 }`}
               >
-                <span>{categoryIcons[cat] || "📌"}</span>
                 {cat}
                 <span className={`rounded-full px-1.5 py-0.5 text-xs font-bold ${
                   active === cat ? "bg-white/20 text-white" : "bg-gray-100 text-gray-500"
@@ -258,7 +253,7 @@ export default function ToursPage() {
       <section className="relative overflow-hidden bg-primary-700 py-20">
         <div className="absolute inset-0 opacity-10">
           <img
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=60"
+            src="https://images.unsplash.com/photo-1585171328560-947fbd92d6f0?w=1200&q=60"
             alt=""
             className="h-full w-full object-cover"
           />

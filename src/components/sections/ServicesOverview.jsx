@@ -10,9 +10,8 @@ const services = [
     features: ["2 – 14 day packages", "Private & group tours", "Fully customisable"],
     cta: "Browse Itineraries",
     to: "/tours",
-    image: "https://images.unsplash.com/photo-1588598198321-9735fd52c145?w=900&q=80",
+    image: "https://images.unsplash.com/photo-1612862862126-865765df2ded?w=900&q=80",
     accent: "from-primary-600 to-primary-800",
-    badge: "🗺️",
   },
   {
     label: "Taxi & Transfers",
@@ -22,9 +21,8 @@ const services = [
     features: ["Airport pickup & drop", "City & intercity transfers", "Tuk-tuk day tours"],
     cta: "Book a Taxi",
     to: "/taxi",
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=900&q=80",
+    image: "https://images.unsplash.com/photo-1583653319049-4db347571740?w=900&q=80",
     accent: "from-amber-600 to-orange-700",
-    badge: "🚖",
   },
   {
     label: "Activities",
@@ -34,9 +32,8 @@ const services = [
     features: ["Water sports & diving", "Hiking & trekking", "Wildlife & cultural tours"],
     cta: "See Activities",
     to: "/activities",
-    image: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=900&q=80",
+    image: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=900&q=80",
     accent: "from-rose-600 to-pink-800",
-    badge: "🏄",
   },
 ];
 
@@ -73,8 +70,7 @@ export default function ServicesOverview() {
                 {/* Content */}
                 <div className="relative flex flex-1 flex-col justify-end p-7">
                   {/* Badge */}
-                  <div className="mb-4 flex items-center gap-2">
-                    <span className="text-3xl">{svc.badge}</span>
+                  <div className="mb-4">
                     <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-sm">
                       {svc.label}
                     </span>

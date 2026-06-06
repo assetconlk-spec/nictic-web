@@ -1,11 +1,21 @@
 import { Link, useLocation } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { HiXMark } from "react-icons/hi2";
-import { navLinks } from "../../data/navigation";
+import { useTranslation } from "react-i18next";
 import Button from "../ui/Button";
 
 export default function MobileMenu({ isOpen, onClose }) {
   const { pathname } = useLocation();
+  const { t } = useTranslation();
+
+  const navLinks = [
+    { label: t("nav.home"),        path: "/" },
+    { label: t("nav.itineraries"), path: "/tours" },
+    { label: t("nav.taxi"),        path: "/taxi" },
+    { label: t("nav.activities"),  path: "/activities" },
+    { label: t("nav.gallery"),     path: "/gallery" },
+    { label: t("nav.contact"),     path: "/contact" },
+  ];
 
   return (
     <AnimatePresence>
@@ -56,7 +66,7 @@ export default function MobileMenu({ isOpen, onClose }) {
               })}
               <div className="mt-6">
                 <Button to="/contact" variant="accent" size="md" className="w-full" onClick={onClose}>
-                  Book Now
+                  {t("nav.bookNow")}
                 </Button>
               </div>
             </nav>

@@ -3,60 +3,12 @@ import SectionHeading from "../ui/SectionHeading";
 import AnimatedSection from "../shared/AnimatedSection";
 
 const activities = [
-  {
-    title: "Scuba Diving",
-    location: "Hikkaduwa",
-    duration: "Half day",
-    difficulty: "Beginner friendly",
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=700&q=80",
-    tag: "Water",
-    emoji: "🤿",
-  },
-  {
-    title: "Surfing",
-    location: "Arugam Bay / Weligama",
-    duration: "2–3 hrs",
-    difficulty: "All levels",
-    image: "https://images.unsplash.com/photo-1502680390469-be75c86b636f?w=700&q=80",
-    tag: "Water",
-    emoji: "🏄",
-  },
-  {
-    title: "Whale Watching",
-    location: "Mirissa",
-    duration: "4–5 hrs",
-    difficulty: "Easy",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=700&q=80",
-    tag: "Wildlife",
-    emoji: "🐋",
-  },
-  {
-    title: "Adam's Peak Hike",
-    location: "Nallathanniya",
-    duration: "5–6 hrs",
-    difficulty: "Moderate",
-    image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&q=80",
-    tag: "Hiking",
-    emoji: "🥾",
-  },
-  {
-    title: "White Water Rafting",
-    location: "Kitulgala",
-    duration: "2–3 hrs",
-    difficulty: "Thrilling",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80",
-    tag: "Adventure",
-    emoji: "🚣",
-  },
-  {
-    title: "Hot Air Balloon",
-    location: "Dambulla",
-    duration: "1 hr flight",
-    difficulty: "Easy",
-    image: "https://images.unsplash.com/photo-1488085061387-422e29b40080?w=700&q=80",
-    tag: "Adventure",
-    emoji: "🎈",
-  },
+  { title: "Scuba Diving",       location: "Hikkaduwa",           duration: "Half day",   difficulty: "Beginner friendly", image: "https://images.unsplash.com/photo-1568430462989-44163eb1752f?w=700&q=80", tag: "Water" },
+  { title: "Surfing",            location: "Arugam Bay / Weligama", duration: "2–3 hrs",   difficulty: "All levels",        image: "https://images.unsplash.com/photo-1583653319049-4db347571740?w=700&q=80", tag: "Water" },
+  { title: "Whale Watching",     location: "Mirissa",              duration: "4–5 hrs",   difficulty: "Easy",              image: "https://images.unsplash.com/photo-1568430328012-21ed450453ea?w=700&q=80", tag: "Wildlife" },
+  { title: "Adam's Peak Hike",   location: "Nallathanniya",        duration: "5–6 hrs",   difficulty: "Moderate",          image: "https://images.unsplash.com/photo-1598955890270-d77cdb06d2bb?w=700&q=80", tag: "Hiking" },
+  { title: "White Water Rafting", location: "Kitulgala",           duration: "2–3 hrs",   difficulty: "Thrilling",         image: "https://images.unsplash.com/photo-1566766189268-ecac9118f2b7?w=700&q=80", tag: "Adventure" },
+  { title: "Hot Air Balloon",    location: "Dambulla",             duration: "1 hr flight", difficulty: "Easy",            image: "https://images.unsplash.com/photo-1580794749460-76f97b7180d8?w=700&q=80", tag: "Adventure" },
 ];
 
 const tagColors = {
@@ -92,13 +44,8 @@ export default function ActivitiesSection() {
                     alt={act.title}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  {/* Tag */}
                   <span className={`absolute top-3 left-3 rounded-full px-3 py-1 text-xs font-bold text-white ${tagColors[act.tag]}`}>
                     {act.tag}
-                  </span>
-                  {/* Emoji badge */}
-                  <span className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-lg shadow-sm">
-                    {act.emoji}
                   </span>
                 </div>
 

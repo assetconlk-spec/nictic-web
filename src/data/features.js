@@ -1,33 +1,37 @@
 import {
-  HiOutlineSparkles,
-  HiOutlineShieldCheck,
-  HiOutlineUserGroup,
-  HiOutlinePhone,
-  HiOutlineGlobeAlt,
+  HiOutlineAdjustmentsHorizontal,
+  HiOutlineBriefcase,
+  HiOutlineChatBubbleLeftRight,
+  HiOutlineRectangleStack,
 } from "react-icons/hi2";
 
 export const features = [
   {
-    icon: HiOutlineSparkles,
-    title: "Bespoke Itineraries",
+    icon: HiOutlineAdjustmentsHorizontal,
+    bold: "100% Tailor-Made",
+    rest: "Travel Plan",
     description:
-      "Every journey is crafted to your preferences, ensuring a unique and personalized Sri Lankan experience.",
+      "Our dedicated destination experts create customised private or group tours to match your needs, with unlimited changes to your travel plans.",
   },
   {
-    icon: HiOutlineShieldCheck,
-    title: "Licensed & Trusted",
-    description: "Operated by a Licensed National Tourist Guide Lecturer",
-  },
-  // {
-  //   icon: HiOutlineUserGroup,
-  //   title: "Local Expert Guides",
-  //   description:
-  //     "Our knowledgeable local guides bring stories, culture, and hidden gems to life on every tour.",
-  // },
-  {
-    icon: HiOutlineGlobeAlt,
-    title: "Sustainable and responsible tourism.",
+    icon: HiOutlineBriefcase,
+    bold: "One Stop Shop",
+    rest: "for All Your Holiday Needs",
     description:
-      "Committed to sustainable, responsible tourism that respects cultures, supports communities, and protects the environment.",
+      "Our consultants help with tours, accommodation, activities, flight tickets, and visas — no matter where your trip takes you.",
+  },
+  {
+    icon: HiOutlineChatBubbleLeftRight,
+    bold: "24/7",
+    rest: "Prompt Customer Support",
+    description:
+      "We provide customer support anytime — day or night, for any issue. Swift solutions, always.",
+  },
+  {
+    icon: HiOutlineRectangleStack,
+    bold: "Multiple Trip",
+    rest: "Options To Select From",
+    description:
+      "Choose from a fully tailor-made private tour, fixed group offers, or small group travels — whatever suits you best.",
   },
 ];

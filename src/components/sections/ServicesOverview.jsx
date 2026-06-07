@@ -11,11 +11,6 @@ const services = [
     features: ["2 – 14 day packages", "Private & group tours", "Fully customisable"],
     cta: "Browse Itineraries",
     to: "/tours",
-    accent: "border-primary-500",
-    iconBg: "bg-primary-50",
-    iconColor: "text-primary-600",
-    numColor: "text-primary-200",
-    ctaColor: "text-primary-600 hover:text-primary-700",
     Icon: () => (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3V6z" />
@@ -32,18 +27,12 @@ const services = [
     features: ["Airport pickup & drop", "City & intercity transfers", "Tuk-tuk day tours"],
     cta: "Book a Taxi",
     to: "/taxi",
-    accent: "border-amber-500",
-    iconBg: "bg-amber-50",
-    iconColor: "text-amber-600",
-    numColor: "text-amber-100",
-    ctaColor: "text-amber-600 hover:text-amber-700",
     Icon: () => (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
         <path d="M5 17H3v-5l2-5h14l2 5v5h-2" />
         <circle cx="7.5" cy="17.5" r="1.5" />
         <circle cx="16.5" cy="17.5" r="1.5" />
-        <path d="M5 12h14" />
-        <path d="M8 7l-1 5M16 7l1 5" />
+        <path d="M5 12h14M8 7l-1 5M16 7l1 5" />
       </svg>
     ),
   },
@@ -56,11 +45,6 @@ const services = [
     features: ["Water sports & diving", "Hiking & trekking", "Wildlife & cultural tours"],
     cta: "See Activities",
     to: "/activities",
-    accent: "border-rose-500",
-    iconBg: "bg-rose-50",
-    iconColor: "text-rose-600",
-    numColor: "text-rose-100",
-    ctaColor: "text-rose-600 hover:text-rose-700",
     Icon: () => (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
         <path d="M2 20l7-11 4 5 3-4 6 10H2z" />
@@ -91,16 +75,17 @@ export default function ServicesOverview() {
         <div className="grid gap-6 md:grid-cols-3">
           {services.map((svc, i) => (
             <AnimatedSection key={svc.label} delay={i * 0.1}>
-              <div className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border-t-4 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${svc.accent}`}>
+              <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border-t-4 border-primary-500 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
 
                 {/* Faint background number */}
-                <span className={`absolute right-5 top-4 select-none text-6xl font-black leading-none ${svc.numColor}`}>
+                <span className="absolute right-5 top-4 select-none text-6xl font-black leading-none text-primary-100">
                   {svc.num}
                 </span>
 
                 <div className="relative flex flex-1 flex-col p-8">
+
                   {/* Icon */}
-                  <div className={`mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl ${svc.iconBg} ${svc.iconColor}`}>
+                  <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary-50 text-primary-600">
                     <svc.Icon />
                   </div>
 
@@ -123,7 +108,7 @@ export default function ServicesOverview() {
                   <ul className="mb-8 space-y-2.5">
                     {svc.features.map((f) => (
                       <li key={f} className="flex items-center gap-3 text-sm text-text-primary">
-                        <svg className={`h-4 w-4 shrink-0 ${svc.iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <svg className="h-4 w-4 shrink-0 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                         </svg>
                         {f}
@@ -135,7 +120,7 @@ export default function ServicesOverview() {
                   <div className="mt-auto">
                     <Link
                       to={svc.to}
-                      className={`inline-flex items-center gap-2 text-sm font-bold transition-all ${svc.ctaColor}`}
+                      className="inline-flex items-center gap-2 text-sm font-bold text-primary-600 transition-all hover:text-primary-700"
                     >
                       {svc.cta}
                       <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -143,8 +128,8 @@ export default function ServicesOverview() {
                       </svg>
                     </Link>
                   </div>
-                </div>
 
+                </div>
               </div>
             </AnimatedSection>
           ))}

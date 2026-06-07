@@ -1,59 +1,9 @@
 import { Link } from "react-router";
 import AnimatedSection from "../shared/AnimatedSection";
 
-/* ── Per-service inline SVG icons ───────────────────────────── */
-function IconItineraries() {
-  return (
-    <svg viewBox="0 0 64 64" fill="none" className="h-14 w-14" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      {/* Map outline */}
-      <path d="M8 14l16-6 16 6 16-6v36l-16 6-16-6-16 6V14z" />
-      <path d="M24 8v36M40 14v36" />
-      {/* Route dots */}
-      <circle cx="32" cy="27" r="4" fill="white" stroke="none" />
-      <path d="M32 23c0-4.418 5-8 5-8s-5 3.582-5 8z" fill="white" stroke="none" />
-    </svg>
-  );
-}
-
-function IconTaxi() {
-  return (
-    <svg viewBox="0 0 64 64" fill="none" className="h-14 w-14" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      {/* Car body */}
-      <path d="M10 34l5-12h34l5 12" />
-      <rect x="8" y="34" width="48" height="14" rx="3" />
-      {/* Wheels */}
-      <circle cx="20" cy="50" r="5" fill="white" stroke="none" />
-      <circle cx="44" cy="50" r="5" fill="white" stroke="none" />
-      <circle cx="20" cy="50" r="2" fill="none" stroke="#00000040" strokeWidth="1.5" />
-      <circle cx="44" cy="50" r="2" fill="none" stroke="#00000040" strokeWidth="1.5" />
-      {/* Windows */}
-      <path d="M17 34l4-10h22l4 10z" fill="white" fillOpacity="0.25" stroke="none" />
-      <line x1="32" y1="24" x2="32" y2="34" />
-    </svg>
-  );
-}
-
-function IconActivities() {
-  return (
-    <svg viewBox="0 0 64 64" fill="none" className="h-14 w-14" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      {/* Mountain */}
-      <path d="M4 52l20-30 10 14 8-10 18 26H4z" />
-      {/* Sun */}
-      <circle cx="48" cy="18" r="6" />
-      <line x1="48" y1="8" x2="48" y2="6" />
-      <line x1="48" y1="28" x2="48" y2="30" />
-      <line x1="38" y1="18" x2="36" y2="18" />
-      <line x1="58" y1="18" x2="60" y2="18" />
-      <line x1="41" y1="11" x2="40" y2="10" />
-      <line x1="55" y1="25" x2="56" y2="26" />
-      <line x1="41" y1="25" x2="40" y2="26" />
-      <line x1="55" y1="11" x2="56" y2="10" />
-    </svg>
-  );
-}
-
 const services = [
   {
+    num: "01",
     label: "Itineraries",
     title: "Curated Multi-Day Tours",
     description:
@@ -61,14 +11,20 @@ const services = [
     features: ["2 – 14 day packages", "Private & group tours", "Fully customisable"],
     cta: "Browse Itineraries",
     to: "/tours",
-    gradient: "from-primary-500 to-primary-700",
-    accentBg: "bg-primary-50",
-    accentText: "text-primary-700",
-    badgeBg: "bg-primary-100",
-    dot: "bg-primary-400",
-    Icon: IconItineraries,
+    accent: "border-primary-500",
+    iconBg: "bg-primary-50",
+    iconColor: "text-primary-600",
+    numColor: "text-primary-200",
+    ctaColor: "text-primary-600 hover:text-primary-700",
+    Icon: () => (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3V6z" />
+        <path d="M9 3v15M15 6v15" />
+      </svg>
+    ),
   },
   {
+    num: "02",
     label: "Taxi & Transfers",
     title: "Reliable Road Transfers",
     description:
@@ -76,14 +32,23 @@ const services = [
     features: ["Airport pickup & drop", "City & intercity transfers", "Tuk-tuk day tours"],
     cta: "Book a Taxi",
     to: "/taxi",
-    gradient: "from-amber-400 to-orange-600",
-    accentBg: "bg-amber-50",
-    accentText: "text-amber-700",
-    badgeBg: "bg-amber-100",
-    dot: "bg-amber-400",
-    Icon: IconTaxi,
+    accent: "border-amber-500",
+    iconBg: "bg-amber-50",
+    iconColor: "text-amber-600",
+    numColor: "text-amber-100",
+    ctaColor: "text-amber-600 hover:text-amber-700",
+    Icon: () => (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M5 17H3v-5l2-5h14l2 5v5h-2" />
+        <circle cx="7.5" cy="17.5" r="1.5" />
+        <circle cx="16.5" cy="17.5" r="1.5" />
+        <path d="M5 12h14" />
+        <path d="M8 7l-1 5M16 7l1 5" />
+      </svg>
+    ),
   },
   {
+    num: "03",
     label: "Activities",
     title: "Adventures & Experiences",
     description:
@@ -91,18 +56,24 @@ const services = [
     features: ["Water sports & diving", "Hiking & trekking", "Wildlife & cultural tours"],
     cta: "See Activities",
     to: "/activities",
-    gradient: "from-rose-500 to-pink-700",
-    accentBg: "bg-rose-50",
-    accentText: "text-rose-700",
-    badgeBg: "bg-rose-100",
-    dot: "bg-rose-400",
-    Icon: IconActivities,
+    accent: "border-rose-500",
+    iconBg: "bg-rose-50",
+    iconColor: "text-rose-600",
+    numColor: "text-rose-100",
+    ctaColor: "text-rose-600 hover:text-rose-700",
+    Icon: () => (
+      <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+        <path d="M2 20l7-11 4 5 3-4 6 10H2z" />
+        <circle cx="18" cy="6" r="2" />
+        <path d="M18 4V2M18 10v-2M16 6h-2M22 6h-2" />
+      </svg>
+    ),
   },
 ];
 
 export default function ServicesOverview() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="bg-gray-50 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4">
 
         <div className="mb-14 text-center">
@@ -112,7 +83,7 @@ export default function ServicesOverview() {
           <h2 className="text-3xl font-bold text-text-primary md:text-4xl">
             One Platform, Three Services
           </h2>
-          <p className="mt-3 text-text-secondary max-w-xl mx-auto">
+          <p className="mt-3 mx-auto max-w-xl text-text-secondary">
             Everything you need for the perfect Sri Lanka trip — in one place.
           </p>
         </div>
@@ -120,49 +91,51 @@ export default function ServicesOverview() {
         <div className="grid gap-6 md:grid-cols-3">
           {services.map((svc, i) => (
             <AnimatedSection key={svc.label} delay={i * 0.1}>
-              <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl">
+              <div className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border-t-4 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl ${svc.accent}`}>
 
-                {/* Coloured icon section */}
-                <div className={`relative flex flex-col items-center justify-center bg-linear-to-br ${svc.gradient} px-8 py-10 overflow-hidden`}>
-                  {/* Decorative circles */}
-                  <div className="absolute -top-8 -right-8 h-32 w-32 rounded-full bg-white/10" />
-                  <div className="absolute -bottom-6 -left-6 h-24 w-24 rounded-full bg-white/10" />
-                  <div className="absolute top-4 left-8 h-3 w-3 rounded-full bg-white/20" />
-                  <div className="absolute bottom-6 right-10 h-2 w-2 rounded-full bg-white/30" />
+                {/* Faint background number */}
+                <span className={`absolute right-5 top-4 select-none text-6xl font-black leading-none ${svc.numColor}`}>
+                  {svc.num}
+                </span>
 
-                  {/* Icon circle */}
-                  <div className="relative mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm ring-2 ring-white/30 transition-transform duration-300 group-hover:scale-110">
+                <div className="relative flex flex-1 flex-col p-8">
+                  {/* Icon */}
+                  <div className={`mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl ${svc.iconBg} ${svc.iconColor}`}>
                     <svc.Icon />
                   </div>
 
                   {/* Label */}
-                  <span className="rounded-full bg-white/20 px-4 py-1 text-xs font-bold uppercase tracking-widest text-white">
+                  <span className="mb-1 text-xs font-bold uppercase tracking-widest text-text-secondary">
                     {svc.label}
                   </span>
-                </div>
 
-                {/* Content section */}
-                <div className="flex flex-1 flex-col px-7 pb-7 pt-6">
-                  <h3 className="mb-2 text-xl font-extrabold leading-tight text-text-primary">
+                  {/* Title */}
+                  <h3 className="mb-3 text-xl font-extrabold leading-tight text-text-primary">
                     {svc.title}
                   </h3>
-                  <p className="mb-5 text-sm leading-relaxed text-text-secondary">
+
+                  {/* Description */}
+                  <p className="mb-6 text-sm leading-relaxed text-text-secondary">
                     {svc.description}
                   </p>
 
-                  <ul className="mb-7 space-y-2.5">
+                  {/* Features */}
+                  <ul className="mb-8 space-y-2.5">
                     {svc.features.map((f) => (
                       <li key={f} className="flex items-center gap-3 text-sm text-text-primary">
-                        <span className={`h-2 w-2 rounded-full shrink-0 ${svc.dot}`} />
+                        <svg className={`h-4 w-4 shrink-0 ${svc.iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
                         {f}
                       </li>
                     ))}
                   </ul>
 
+                  {/* CTA */}
                   <div className="mt-auto">
                     <Link
                       to={svc.to}
-                      className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold transition-all ${svc.accentBg} ${svc.accentText} hover:opacity-80`}
+                      className={`inline-flex items-center gap-2 text-sm font-bold transition-all ${svc.ctaColor}`}
                     >
                       {svc.cta}
                       <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

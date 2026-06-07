@@ -11,7 +11,11 @@ const services = [
     cta: "Browse Itineraries",
     to: "/tours",
     image: "https://images.unsplash.com/photo-1612862862126-865765df2ded?w=900&q=80",
-    accent: "from-primary-600 to-primary-800",
+    accent: "bg-primary-500",
+    accentLight: "bg-primary-50",
+    accentText: "text-primary-600",
+    dotColor: "bg-primary-400",
+    overlay: "from-primary-900/60 to-primary-900/10",
   },
   {
     label: "Taxi & Transfers",
@@ -22,7 +26,11 @@ const services = [
     cta: "Book a Taxi",
     to: "/taxi",
     image: "https://images.unsplash.com/photo-1583653319049-4db347571740?w=900&q=80",
-    accent: "from-amber-600 to-orange-700",
+    accent: "bg-amber-500",
+    accentLight: "bg-amber-50",
+    accentText: "text-amber-600",
+    dotColor: "bg-amber-400",
+    overlay: "from-amber-900/60 to-amber-900/10",
   },
   {
     label: "Activities",
@@ -33,15 +41,21 @@ const services = [
     cta: "See Activities",
     to: "/activities",
     image: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=900&q=80",
-    accent: "from-rose-600 to-pink-800",
+    accent: "bg-rose-500",
+    accentLight: "bg-rose-50",
+    accentText: "text-rose-600",
+    dotColor: "bg-rose-400",
+    overlay: "from-rose-900/60 to-rose-900/10",
   },
 ];
 
 export default function ServicesOverview() {
   return (
-    <section className="py-20 lg:py-24">
+    <section className="py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4">
-        <div className="mb-12 text-center">
+
+        {/* Heading */}
+        <div className="mb-14 text-center">
           <span className="mb-2 inline-block text-sm font-semibold uppercase tracking-wider text-primary-500">
             What We Offer
           </span>
@@ -50,61 +64,66 @@ export default function ServicesOverview() {
           </h2>
         </div>
 
+        {/* Cards */}
         <div className="grid gap-6 md:grid-cols-3">
           {services.map((svc, i) => (
             <AnimatedSection key={svc.label} delay={i * 0.1}>
-              <Link
-                to={svc.to}
-                className="group relative flex h-full flex-col overflow-hidden rounded-3xl shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-2xl"
-              >
-                {/* Background image */}
-                <div className="absolute inset-0">
+              <div className="group flex h-full flex-col overflow-hidden rounded-3xl border border-gray-100 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl">
+
+                {/* Image panel */}
+                <div className="relative h-56 overflow-hidden">
                   <img
                     src={svc.image}
                     alt={svc.label}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/50 to-black/20" />
+                  {/* Subtle bottom fade into white card */}
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-linear-to-t from-white to-transparent" />
+
+                  {/* Label badge top-left */}
+                  <span className={`absolute top-4 left-4 rounded-full px-3 py-1 text-xs font-bold uppercase tracking-widest text-white ${svc.accent}`}>
+                    {svc.label}
+                  </span>
                 </div>
 
-                {/* Content */}
-                <div className="relative flex flex-1 flex-col justify-end p-7">
-                  {/* Badge */}
-                  <div className="mb-4">
-                    <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-white backdrop-blur-sm">
-                      {svc.label}
-                    </span>
-                  </div>
-
-                  <h3 className="mb-2 text-2xl font-extrabold text-white leading-tight">
+                {/* Text panel */}
+                <div className="flex flex-1 flex-col px-7 pb-7 pt-4">
+                  <h3 className="mb-2 text-xl font-extrabold leading-tight text-text-primary">
                     {svc.title}
                   </h3>
-                  <p className="mb-5 text-sm leading-relaxed text-gray-300">
+                  <p className="mb-5 text-sm leading-relaxed text-text-secondary">
                     {svc.description}
                   </p>
 
                   {/* Feature list */}
-                  <ul className="mb-6 space-y-1.5">
+                  <ul className="mb-7 space-y-2">
                     {svc.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-gray-200">
-                        <span className="h-1.5 w-1.5 rounded-full bg-primary-400 shrink-0" />
+                      <li key={f} className="flex items-center gap-2.5 text-sm text-text-primary">
+                        <span className={`h-2 w-2 rounded-full shrink-0 ${svc.dotColor}`} />
                         {f}
                       </li>
                     ))}
                   </ul>
 
                   {/* CTA */}
-                  <span className="inline-flex items-center gap-2 rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-gray-900 transition group-hover:bg-primary-500 group-hover:text-white w-fit">
-                    {svc.cta}
-                    <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                    </svg>
-                  </span>
+                  <div className="mt-auto">
+                    <Link
+                      to={svc.to}
+                      className={`inline-flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold transition-all ${svc.accentLight} ${svc.accentText} hover:opacity-80`}
+                    >
+                      {svc.cta}
+                      <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
+                    </Link>
+                  </div>
                 </div>
-              </Link>
+
+              </div>
             </AnimatedSection>
           ))}
         </div>
+
       </div>
     </section>
   );

@@ -3,7 +3,7 @@ import { features } from "../../data/features";
 
 export default function WhyChooseUs() {
   return (
-    <section className="bg-surface-alt py-20 lg:py-28">
+    <section className="bg-blue-50 py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-4">
 
         {/* Heading */}
@@ -19,16 +19,14 @@ export default function WhyChooseUs() {
           </p>
         </div>
 
-        {/* 2×2 grid */}
-        <div className="grid gap-6 sm:grid-cols-2">
+        {/* 2×2 grid — no card boxes, just icon + text on background */}
+        <div className="grid gap-x-16 gap-y-12 sm:grid-cols-2">
           {features.map((f, i) => (
             <AnimatedSection key={f.bold} delay={i * 0.1}>
-              <div className="group flex gap-5 rounded-2xl bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+              <div className="flex items-start gap-5">
 
-                {/* Icon */}
-                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary-500 transition-colors duration-300 group-hover:bg-primary-500 group-hover:text-white">
-                  <f.icon className="h-7 w-7" />
-                </div>
+                {/* Icon — plain, no background box */}
+                <f.icon className="mt-0.5 h-10 w-10 shrink-0 text-gray-500" strokeWidth={1.4} />
 
                 {/* Text */}
                 <div>

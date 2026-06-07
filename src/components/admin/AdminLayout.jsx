@@ -22,7 +22,7 @@ import { useIdleTimeout } from "../../hooks/useIdleTimeout";
 const navItems = [
   { to: "/admin/dashboard", icon: HiOutlineHome, label: "Dashboard" },
   { to: "/admin/slider", icon: HiOutlineSquares2X2, label: "Home Slider" },
-  { to: "/admin/tours", icon: HiOutlineMap, label: "Itineraries" },
+  { to: "/admin/itineraries", icon: HiOutlineMap, label: "Itineraries" },
   { to: "/admin/gallery", icon: HiOutlinePhoto, label: "Gallery" },
   { to: "/admin/inquiries", icon: HiOutlineEnvelope, label: "Inquiries" },
   { to: "/admin/essential-info", icon: HiOutlineDocumentText, label: "Essential Info" },

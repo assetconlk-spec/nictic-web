@@ -27,7 +27,7 @@ export default function TourDetailPage() {
     async function fetchTour() {
       try {
         const data = await pb
-          .collection("tours")
+          .collection("itineraries")
           .getFirstListItem(`slug="${slug}"`);
         const parseJson = (val) => {
           if (Array.isArray(val)) return val;
@@ -48,7 +48,7 @@ export default function TourDetailPage() {
         });
         document.title = `${data.title} | nictic.travel`;
       } catch {
-        navigate("/tours");
+        navigate("/itineraries");
       }
       setLoading(false);
     }
@@ -82,7 +82,7 @@ export default function TourDetailPage() {
 
         {/* Back link */}
         <Link
-          to="/tours"
+          to="/itineraries"
           className="absolute left-6 top-28 flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20"
         >
           <HiOutlineArrowLeft className="h-4 w-4" />

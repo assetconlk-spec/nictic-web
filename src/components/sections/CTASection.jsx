@@ -39,7 +39,7 @@ export default function CTASection() {
             <Button to="/contact" variant="accent" size="lg" className="w-48">
               Start Plan
             </Button>
-            <Button to="/tours" variant="white" size="lg" className="w-48">
+            <Button to="/itineraries" variant="white" size="lg" className="w-48">
               Browse Itineraries
             </Button>
           </div>

@@ -79,7 +79,7 @@ export default function DestinationsSection() {
             {destinations.map((dest) => (
               <Link
                 key={dest.name}
-                to="/tours"
+                to="/itineraries"
                 className="group relative block overflow-hidden rounded-2xl aspect-[3/4]"
               >
                 <img

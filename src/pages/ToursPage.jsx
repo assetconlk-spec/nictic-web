@@ -15,7 +15,7 @@ import {
 function FeaturedCard({ tour }) {
   return (
     <Link
-      to={`/tours/${tour.slug}`}
+      to={`/itineraries/${tour.slug}`}
       className="group relative mb-10 flex h-96 overflow-hidden rounded-3xl shadow-xl lg:h-120"
     >
       <img
@@ -65,7 +65,7 @@ function TourCard({ tour, index }) {
   return (
     <AnimatedSection delay={index * 0.07}>
       <Link
-        to={`/tours/${tour.slug}`}
+        to={`/itineraries/${tour.slug}`}
         className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm border border-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
       >
         <div className="relative h-52 overflow-hidden">
@@ -135,7 +135,7 @@ export default function ToursPage() {
   const categories = useMemo(() => ["All", ...rawCategories], [rawCategories]);
 
   useEffect(() => {
-    pb.collection("tours")
+    pb.collection("itineraries")
       .getFullList({ sort: "-id" })
       .then((data) =>
         setTours(data.map((r) => ({

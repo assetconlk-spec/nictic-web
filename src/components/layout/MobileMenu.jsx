@@ -10,7 +10,7 @@ export default function MobileMenu({ isOpen, onClose }) {
 
   const navLinks = [
     { label: t("nav.home"),        path: "/" },
-    { label: t("nav.itineraries"), path: "/tours" },
+    { label: t("nav.itineraries"), path: "/itineraries" },
     { label: t("nav.taxi"),        path: "/taxi" },
     { label: t("nav.activities"),  path: "/activities" },
     { label: t("nav.gallery"),     path: "/gallery" },

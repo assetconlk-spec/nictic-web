@@ -10,7 +10,7 @@ const services = [
       "Expertly crafted journeys through Sri Lanka's ancient cities, misty highlands, wildlife parks, and golden coastlines.",
     features: ["2 – 14 day packages", "Private & group tours", "Fully customisable"],
     cta: "Browse Itineraries",
-    to: "/tours",
+    to: "/itineraries",
     Icon: () => (
       <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
         <path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3V6z" />

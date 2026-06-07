@@ -124,7 +124,7 @@ export default function HeroSlider() {
             className="flex items-center gap-8"
           >
             <Link
-              to="/tours"
+              to="/itineraries"
               className="group inline-flex items-center gap-3 text-sm font-semibold text-white"
             >
               <span className="border-b border-white/60 pb-0.5 transition-colors group-hover:border-white">
@@ -175,7 +175,7 @@ export default function HeroSlider() {
           {/* Service tabs — full width, equal columns */}
           <div className="grid grid-cols-3 divide-x divide-white/10 bg-black/40 backdrop-blur-md">
             {[
-              { num: "01", label: t("services.itineraries"), to: "/tours",      desc: t("services.itinerariesDesc") },
+              { num: "01", label: t("services.itineraries"), to: "/itineraries",      desc: t("services.itinerariesDesc") },
               { num: "02", label: t("services.taxi"),        to: "/taxi",       desc: t("services.taxiDesc") },
               { num: "03", label: t("services.activities"),  to: "/activities", desc: t("services.activitiesDesc") },
             ].map((tab) => (

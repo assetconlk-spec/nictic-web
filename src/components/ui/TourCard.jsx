@@ -5,7 +5,7 @@ import AnimatedSection from "../shared/AnimatedSection";
 export default function TourCard({ tour, index = 0 }) {
   return (
     <AnimatedSection delay={index * 0.1}>
-      <Link to={`/tours/${tour.slug}`} className="group block overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow duration-300 hover:shadow-xl">
+      <Link to={`/itineraries/${tour.slug}`} className="group block overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow duration-300 hover:shadow-xl">
         {/* Image */}
         <div className="relative overflow-hidden aspect-[4/3]">
           <img

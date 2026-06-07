@@ -33,8 +33,8 @@ export default function App() {
           {/* Public site */}
           <Route element={<Layout />}>
             <Route index element={<HomePage />} />
-            <Route path="tours" element={<ToursPage />} />
-            <Route path="tours/:slug" element={<TourDetailPage />} />
+            <Route path="itineraries" element={<ToursPage />} />
+            <Route path="itineraries/:slug" element={<TourDetailPage />} />
             <Route path="taxi" element={<TaxiPage />} />
             <Route path="activities" element={<ActivitiesPage />} />
             <Route path="gallery" element={<GalleryPage />} />
@@ -55,7 +55,7 @@ export default function App() {
           >
             <Route index element={<Navigate to="dashboard" replace />} />
             <Route path="dashboard" element={<DashboardPage />} />
-            <Route path="tours" element={<ToursAdminPage />} />
+            <Route path="itineraries" element={<ToursAdminPage />} />
             <Route path="gallery" element={<GalleryAdminPage />} />
             <Route path="inquiries" element={<InquiriesPage />} />
             <Route path="slider" element={<SliderAdminPage />} />

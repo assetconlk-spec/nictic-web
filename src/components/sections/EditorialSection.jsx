@@ -7,31 +7,31 @@ const editorials = [
     label: "Top Picks",
     title: "Best Beaches in Sri Lanka",
     image: "https://images.unsplash.com/photo-1580910527739-556eb89f9d65?w=700&q=80",
-    to: "/tours",
+    to: "/itineraries",
   },
   {
     label: "Hidden Gems",
     title: "Scenic Train Journeys",
     image: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?w=700&q=80",
-    to: "/tours",
+    to: "/itineraries",
   },
   {
     label: "Adventure",
     title: "Top Treks & Hikes",
     image: "https://images.unsplash.com/photo-1578519050142-afb511e518de?w=700&q=80",
-    to: "/tours",
+    to: "/itineraries",
   },
   {
     label: "Wildlife",
     title: "Best Safari Parks",
     image: "https://images.unsplash.com/photo-1621847473222-d85c022cbf07?w=700&q=80",
-    to: "/tours",
+    to: "/itineraries",
   },
   {
     label: "Culture",
     title: "UNESCO Heritage Sites",
     image: "https://images.unsplash.com/photo-1612862862126-865765df2ded?w=700&q=80",
-    to: "/tours",
+    to: "/itineraries",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function EditorialSection() {
         </AnimatedSection>
         <div className="mt-10 text-center">
           <Link
-            to="/tours"
+            to="/itineraries"
             className="inline-flex items-center gap-2 rounded-full border-2 border-primary-600 px-8 py-3 text-sm font-bold text-primary-600 transition hover:bg-primary-600 hover:text-white"
           >
             View All Itineraries

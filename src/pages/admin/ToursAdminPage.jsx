@@ -182,9 +182,9 @@ function Modal({ tour, onClose, onSaved }) {
       const isNew = !tour;
       let record;
       if (tour) {
-        record = await pb.collection("tours").update(tour.id, data);
+        record = await pb.collection("itineraries").update(tour.id, data);
       } else {
-        record = await pb.collection("tours").create(data);
+        record = await pb.collection("itineraries").create(data);
       }
 
       // Step 2: upload files separately if any
@@ -210,7 +210,7 @@ function Modal({ tour, onClose, onSaved }) {
         if (mapImageFile) {
           fd.append("map_image", await compressImage(mapImageFile, "tour"));
         }
-        await pb.collection("tours").update(record.id, fd);
+        await pb.collection("itineraries").update(record.id, fd);
       }
 
       onSaved(isNew);
@@ -713,7 +713,7 @@ export default function ToursAdminPage() {
   };
 
   const fetchTours = async () => {
-    const data = await pb.collection("tours").getFullList({ sort: "-id" });
+    const data = await pb.collection("itineraries").getFullList({ sort: "-id" });
     setTours(data.map(normalizeTour));
     setLoading(false);
   };
@@ -727,7 +727,7 @@ export default function ToursAdminPage() {
   };
 
   const confirmDelete = async () => {
-    await pb.collection("tours").delete(deleteTarget.id);
+    await pb.collection("itineraries").delete(deleteTarget.id);
     setTours((prev) => prev.filter((t) => t.id !== deleteTarget.id));
     showSuccess("Tour deleted successfully.");
     setDeleteTarget(null);

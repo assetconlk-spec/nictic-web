@@ -8,7 +8,7 @@ export default function FeaturedTours() {
   const [tours, setTours] = useState([]);
 
   useEffect(() => {
-    pb.collection("tours")
+    pb.collection("itineraries")
       .getFullList({ sort: "-id" })
       .then((data) => {
         setTours(
@@ -37,7 +37,7 @@ export default function FeaturedTours() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <Button to="/tours" variant="primary" size="lg">
+          <Button to="/itineraries" variant="primary" size="lg">
             View All Itineraries
           </Button>
         </div>

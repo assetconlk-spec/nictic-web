@@ -13,7 +13,7 @@ export default function Footer() {
   const [popularTours, setPopularTours] = useState([]);
 
   useEffect(() => {
-    pb.collection("tours")
+    pb.collection("itineraries")
       .getFullList({ filter: "popular=true", sort: "-id", requestKey: null })
       .then((data) => setPopularTours(data))
       .catch(() => {});
@@ -88,7 +88,7 @@ export default function Footer() {
                 popularTours.map((tour) => (
                   <li key={tour.id}>
                     <Link
-                      to={`/tours/${tour.slug}`}
+                      to={`/itineraries/${tour.slug}`}
                       className="text-sm text-primary-200/70 transition-colors hover:text-white"
                     >
                       {tour.title}

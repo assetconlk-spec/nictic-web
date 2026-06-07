@@ -54,9 +54,9 @@ export default function CategoriesAdminPage() {
   return (
     <div>
       <div className="mb-6">
-        <h1 className="text-xl font-bold text-gray-900">Tour Categories</h1>
+        <h1 className="text-xl font-bold text-gray-900">Itinerary Categories</h1>
         <p className="mt-1 text-sm text-gray-500">
-          Manage the category filters shown on the Tours and Gallery pages.
+          Manage the category filters shown on the Itineraries and Gallery pages.
         </p>
       </div>
 

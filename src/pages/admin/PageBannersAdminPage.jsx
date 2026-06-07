@@ -4,7 +4,7 @@ import { pb } from "../../lib/pocketbase";
 import { compressImage } from "../../lib/compressImage";
 
 const PAGES = [
-  { page: "tours",   label: "Tours Page",    title: "Our Tours",  fallback: "/images/aboutUs/tour-banner.png" },
+  { page: "tours",   label: "Itineraries Page", title: "Itineraries", fallback: "/images/aboutUs/tour-banner.png" },
   { page: "gallery", label: "Gallery Page",  title: "Gallery",    fallback: "/images/aboutUs/gallery.jpeg" },
   { page: "about",   label: "About Us Page", title: "About Us",   fallback: "/images/aboutUs/about-banner.png" },
   { page: "contact", label: "Contact Page",  title: "Contact Us", fallback: "/images/aboutUs/contact-us-banner.jpeg" },

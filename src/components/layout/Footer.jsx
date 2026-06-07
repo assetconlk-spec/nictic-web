@@ -78,10 +78,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Popular Tours */}
+          {/* Popular Itineraries */}
           <div>
             <h4 className="mb-5 text-sm font-bold uppercase tracking-widest text-primary-400">
-              Popular Tours
+              Popular Itineraries
             </h4>
             <ul className="space-y-3">
               {popularTours.length > 0 ? (

@@ -742,7 +742,7 @@ export default function ToursAdminPage() {
   return (
     <div>
       <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-xl font-bold text-gray-900">Tours</h1>
+        <h1 className="text-xl font-bold text-gray-900">Itineraries</h1>
         <button
           onClick={() => setModal("add")}
           className="flex items-center gap-2 rounded-lg bg-primary-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-700 cursor-pointer"

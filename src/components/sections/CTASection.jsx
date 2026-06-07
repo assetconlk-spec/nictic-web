@@ -40,7 +40,7 @@ export default function CTASection() {
               Start Plan
             </Button>
             <Button to="/tours" variant="white" size="lg" className="w-48">
-              Browse Tours
+              Browse Itineraries
             </Button>
           </div>
         </AnimatedSection>

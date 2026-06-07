@@ -9,7 +9,7 @@
     "bookNow": "Book Now"
   },
   "hero": {
-    "exploreTours": "Explore Tours",
+    "exploreTours": "Explore Itineraries",
     "planYourTrip": "Plan Your Trip"
   },
   "slider": {
@@ -28,10 +28,10 @@
     "learnMore": "Learn More",
     "viewAll": "View All",
     "bookOnWhatsApp": "Book on WhatsApp",
-    "viewAllTours": "View All Tours",
+    "viewAllTours": "View All Itineraries",
     "viewAllActivities": "View All Activities",
     "viewAllServices": "View All Services",
-    "exploreTours": "Explore tours",
+    "exploreTours": "Explore Itineraries",
     "from": "From"
   },
   "footer": {

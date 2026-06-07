@@ -78,7 +78,7 @@ export default function EditorialSection() {
             to="/tours"
             className="inline-flex items-center gap-2 rounded-full border-2 border-primary-600 px-8 py-3 text-sm font-bold text-primary-600 transition hover:bg-primary-600 hover:text-white"
           >
-            View All Tours
+            View All Itineraries
           </Link>
         </div>
       </div>

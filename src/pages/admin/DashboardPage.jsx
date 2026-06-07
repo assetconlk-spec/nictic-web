@@ -41,7 +41,7 @@ export default function DashboardPage() {
       to: '/admin/slider',
     },
     {
-      label: 'Tours',
+      label: 'Itineraries',
       value: stats.tours,
       icon: HiOutlineMap,
       color: 'bg-primary-50 text-primary-600',

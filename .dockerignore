@@ -1,0 +1,13 @@
+node_modules
+dist
+dist-ssr
+pb_data
+.env
+.env.local
+.env.production
+src
+public
+api
+dev-server.js
+*.md
+.git

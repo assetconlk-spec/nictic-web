@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { HiOutlineClock } from "react-icons/hi2";
+import { HiOutlineClock, HiArrowRight } from "react-icons/hi2";
 import AnimatedSection from "../shared/AnimatedSection";
 
 export default function TourCard({ tour, index = 0 }) {
@@ -28,7 +28,7 @@ export default function TourCard({ tour, index = 0 }) {
           </p>
 
           {/* Meta */}
-          <div className="mb-4 flex items-center gap-4 text-sm text-text-secondary">
+          <div className="mb-5 flex items-center gap-4 text-sm text-text-secondary">
             <span className="flex items-center gap-1">
               <HiOutlineClock className="h-4 w-4" />
               {tour.duration}
@@ -37,11 +37,12 @@ export default function TourCard({ tour, index = 0 }) {
 
           {/* Price + CTA */}
           <div className="flex items-center justify-between">
-            <div>
-              <span className="text-2xl font-bold text-primary-600">{tour.price}</span>
-            </div>
-            <span className="rounded-lg bg-primary-600 px-4 py-2 text-sm font-semibold text-white transition group-hover:bg-primary-700">
+            <span className="text-xl font-extrabold text-gray-900">
+              {tour.price.startsWith("From") ? tour.price : `From $${tour.price}`}
+            </span>
+            <span className="flex items-center gap-1 text-sm font-bold text-primary-600 transition-colors group-hover:text-primary-700">
               View Details
+              <HiArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
           </div>
         </div>

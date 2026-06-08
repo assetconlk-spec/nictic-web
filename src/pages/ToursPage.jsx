@@ -135,16 +135,26 @@ export default function ToursPage() {
   const categories = useMemo(() => ["All", ...rawCategories], [rawCategories]);
 
   useEffect(() => {
-    pb.collection("itineraries")
-      .getFullList({ sort: "-id" })
-      .then((data) =>
-        setTours(data.map((r) => ({
-          ...r,
-          image: r.image ? pb.files.getURL(r, r.image) : r.image_url || "",
-        })))
-      )
-      .catch(() => setTours([]))
-      .finally(() => setIsLoading(false));
+    const load = async (retries = 3) => {
+      for (let i = 0; i < retries; i++) {
+        try {
+          const data = await pb.collection("itineraries").getFullList({ sort: "-id", requestKey: null });
+          setTours(data.map((r) => ({
+            ...r,
+            image: r.image ? pb.files.getURL(r, r.image) : r.image_url || "",
+          })));
+          return;
+        } catch (err) {
+          if (i === retries - 1) {
+            console.error("Failed to load itineraries:", err);
+            setTours([]);
+          } else {
+            await new Promise((r) => setTimeout(r, 1000 * (i + 1)));
+          }
+        }
+      }
+    };
+    load().finally(() => setIsLoading(false));
   }, []);
 
   useEffect(() => {

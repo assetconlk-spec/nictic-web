@@ -3,7 +3,7 @@
   "build": {
     "builder": "DOCKERFILE",
     "dockerfilePath": "pocketbase-deploy/Dockerfile",
-    "buildContext": "pocketbase-deploy"
+    "buildContext": "."
   },
   "deploy": {
     "healthcheckPath": "/api/health",

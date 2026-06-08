@@ -24,6 +24,7 @@ import ContactInfoAdminPage from "./pages/admin/ContactInfoAdminPage";
 import CategoriesAdminPage from "./pages/admin/CategoriesAdminPage";
 import UsersAdminPage from "./pages/admin/UsersAdminPage";
 import PageBannersAdminPage from "./pages/admin/PageBannersAdminPage";
+import BookingSuccessPage from "./pages/BookingSuccessPage";
 
 export default function App() {
   return (
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="about" element={<AboutPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="essential-info" element={<EssentialInfoPage />} />
+            <Route path="booking-success" element={<BookingSuccessPage />} />
           </Route>
 
           {/* Admin */}

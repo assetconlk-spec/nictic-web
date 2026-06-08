@@ -4,21 +4,30 @@ import TourCard from "../ui/TourCard";
 import Button from "../ui/Button";
 import { pb } from "../../lib/pocketbase";
 
+async function fetchItineraries(retries = 3) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      return await pb.collection("itineraries").getFullList({ sort: "-id", requestKey: null });
+    } catch (e) {
+      if (i === retries - 1) throw e;
+      await new Promise((r) => setTimeout(r, 1000 * (i + 1)));
+    }
+  }
+}
+
 export default function FeaturedTours() {
   const [tours, setTours] = useState([]);
 
   useEffect(() => {
-    pb.collection("itineraries")
-      .getFullList({ sort: "-id" })
-      .then((data) => {
-        setTours(
-          data.map((r) => ({
-            ...r,
-            image: r.image ? pb.files.getURL(r, r.image) : r.image_url || "",
-          })),
-        );
-      })
-      .catch(() => {
+    fetchItineraries()
+      .then((data) =>
+        setTours(data.map((r) => ({
+          ...r,
+          image: r.image ? pb.files.getURL(r, r.image) : r.image_url || "",
+        })))
+      )
+      .catch((err) => {
+        console.error("Failed to load itineraries:", err);
         setTours([]);
       });
   }, []);

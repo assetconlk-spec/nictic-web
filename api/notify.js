@@ -18,8 +18,8 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'nictic.travel <hello@gajalankatours.com>',
-        to: ['hello@gajalankatours.com'],
+        from: 'nictic.travel <hello@nictic.travel>',
+        to: ['hello@nictic.travel'],
         subject: `New Inquiry: ${subject || '(no subject)'}`,
         html: `
           <h2 style="color:#1a1a1a">New inquiry from ${name}</h2>
@@ -32,7 +32,7 @@ export default async function handler(req, res) {
           <h3 style="color:#1a1a1a;margin-top:24px">Message</h3>
           <p style="color:#333;line-height:1.6">${(message || '').replace(/\n/g, '<br>')}</p>
           <hr style="margin-top:32px;border:none;border-top:1px solid #eee">
-          <p style="color:#999;font-size:12px">Sent via gajalankatours.com contact form</p>
+          <p style="color:#999;font-size:12px">Sent via nictic.travel contact form</p>
         `,
       }),
     })

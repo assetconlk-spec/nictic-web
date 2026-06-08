@@ -9,8 +9,11 @@ RUN wget https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSIO
     && rm pocketbase_${PB_VERSION}_linux_amd64.zip \
     && chmod +x pocketbase
 
-COPY start.sh /start.sh
+COPY pocketbase-deploy/start.sh /start.sh
 RUN chmod +x /start.sh
+
+# Bundle migrations so they run on first boot
+COPY pb_migrations/ /pb_migrations/
 
 EXPOSE 8090
 

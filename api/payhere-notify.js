@@ -18,7 +18,7 @@ export default async function handler(req, res) {
   } = req.body || {};
 
   const merchant_secret = process.env.PAYHERE_MERCHANT_SECRET;
-  const pb_url = process.env.VITE_PB_URL || "https://tourism-pocketbase-production.up.railway.app";
+  const pb_url = process.env.VITE_PB_URL || "https://nictic-web-production.up.railway.app";
 
   // ── Verify signature ──────────────────────────────────────────
   if (merchant_secret) {

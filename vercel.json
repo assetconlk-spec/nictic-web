@@ -1,10 +1,10 @@
 {
   "github": { "enabled": true },
   "rewrites": [
-    { "source": "/api/collections/:path*", "destination": "https://tourism-pocketbase-production.up.railway.app/api/collections/:path*" },
-    { "source": "/api/files/:path*",       "destination": "https://tourism-pocketbase-production.up.railway.app/api/files/:path*" },
-    { "source": "/api/health",             "destination": "https://tourism-pocketbase-production.up.railway.app/api/health" },
-    { "source": "/_/:path*",               "destination": "https://tourism-pocketbase-production.up.railway.app/_/:path*" },
+    { "source": "/api/collections/:path*", "destination": "https://nictic-web-production.up.railway.app/api/collections/:path*" },
+    { "source": "/api/files/:path*",       "destination": "https://nictic-web-production.up.railway.app/api/files/:path*" },
+    { "source": "/api/health",             "destination": "https://nictic-web-production.up.railway.app/api/health" },
+    { "source": "/_/:path*",               "destination": "https://nictic-web-production.up.railway.app/_/:path*" },
     { "source": "/(.*)",                   "destination": "/index.html" }
   ]
 }

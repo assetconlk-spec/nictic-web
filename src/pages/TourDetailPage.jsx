@@ -335,10 +335,10 @@ export default function TourDetailPage() {
                   {/* Primary — pay deposit */}
                   <button
                     onClick={() => setBookingOpen(true)}
-                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary-700 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-primary-800"
+                    className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary-700 px-6 py-3.5 text-sm font-bold text-white transition hover:bg-primary-600 active:scale-95 cursor-pointer"
                   >
                     <HiOutlineCreditCard className="h-5 w-5" />
-                    Book & Pay Deposit
+                    Book Now
                   </button>
 
                   {/* Secondary — WhatsApp */}

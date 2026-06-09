@@ -18,21 +18,15 @@ export default function PaymentIcons({ variant = "light" }) {
   const isDark = variant === "dark";
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-1">
+    <div className="flex flex-wrap items-center justify-center gap-2">
       {ICONS.map(({ file, label }) => (
-        <div
+        <img
           key={label}
-          className={`flex h-8 w-12 items-center justify-center rounded-lg ${
-            isDark ? "" : ""
-          }`}
+          src={`/payment-icons/${file}`}
+          alt={label}
           title={label}
-        >
-          <img
-            src={`/payment-icons/${file}`}
-            alt={label}
-            className="h-6 w-auto max-w-11 object-contain"
-          />
-        </div>
+          className={`h-7 w-auto object-contain ${isDark ? "opacity-70" : ""}`}
+        />
       ))}
     </div>
   );

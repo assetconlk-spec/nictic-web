@@ -6,6 +6,7 @@ import PageLoader from "../components/shared/PageLoader";
 import { useCategories } from "../hooks/useCategories";
 import {
   HiOutlineClock,
+  HiOutlineUsers,
   HiOutlineArrowRight,
   HiOutlineSparkles,
 } from "react-icons/hi2";

@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 
-const SANDBOX_SRC = "https://sandbox.payhere.lk/lib/payhere.js";
-const LIVE_SRC    = "https://www.payhere.lk/lib/payhere.js";
+const PAYHERE_SRC = "https://www.payhere.lk/lib/payhere.js";
 
 export function usePayhere() {
   const scriptRef = useRef(null);
@@ -12,7 +11,7 @@ export function usePayhere() {
     if (scriptRef.current || document.getElementById("payhere-script")) return;
     const script = document.createElement("script");
     script.id  = "payhere-script";
-    script.src = isSandbox ? SANDBOX_SRC : LIVE_SRC;
+    script.src = PAYHERE_SRC;
     script.async = true;
     document.head.appendChild(script);
     scriptRef.current = script;

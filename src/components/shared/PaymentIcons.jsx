@@ -23,7 +23,7 @@ export default function PaymentIcons({ variant = "light" }) {
         <div
           key={label}
           className={`flex h-8 w-12 items-center justify-center rounded-lg ${
-            isDark ? "" : "border border-gray-100 bg-white shadow-xs"
+            isDark ? "" : ""
           }`}
           title={label}
         >

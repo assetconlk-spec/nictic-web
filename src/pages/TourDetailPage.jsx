@@ -272,7 +272,7 @@ export default function TourDetailPage() {
                         Starting from
                       </span>
                       <span className="text-xl font-bold text-primary-600">
-                        ${tour.price}
+                        {tour.price?.startsWith("From") ? tour.price : `From $${tour.price}`}
                       </span>
                     </div>
                     {tour.difficulty && (

@@ -59,9 +59,17 @@ export function usePayhere() {
         custom_2:    String(pax || 1),
       };
 
-      // 3 — Wire up callbacks and open popup
+      // 3 — Wait up to 6s for PayHere script to finish loading, then open popup
+      if (!window.payhere) {
+        await new Promise((resolve, reject) => {
+          let tries = 0;
+          const poll = setInterval(() => {
+            if (window.payhere) { clearInterval(poll); resolve(); }
+            else if (++tries > 30) { clearInterval(poll); reject(new Error("PayHere failed to load. Please refresh and try again.")); }
+          }, 200);
+        });
+      }
       const payhere = window.payhere;
-      if (!payhere) throw new Error("PayHere library is not loaded yet. Please try again.");
 
       payhere.onCompleted = (id) => callbacks.onSuccess?.(id);
       payhere.onDismissed = ()   => callbacks.onDismissed?.();

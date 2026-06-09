@@ -18,14 +18,14 @@ export default function PaymentIcons({ variant = "light" }) {
   const isDark = variant === "dark";
 
   return (
-    <div className="flex items-center gap-4 overflow-x-auto scrollbar-hide">
+    <div className="flex flex-wrap items-center justify-center gap-2">
       {ICONS.map(({ file, label }) => (
         <img
           key={label}
           src={`/payment-icons/${file}`}
           alt={label}
           title={label}
-          className={`h-6 w-auto shrink-0 object-contain ${isDark ? "opacity-60 brightness-200" : ""}`}
+          className={`h-7 w-auto object-contain ${isDark ? "opacity-70" : ""}`}
         />
       ))}
     </div>

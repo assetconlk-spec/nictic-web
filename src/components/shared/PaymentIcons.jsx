@@ -18,11 +18,11 @@ export default function PaymentIcons({ variant = "light" }) {
   const isDark = variant === "dark";
 
   return (
-    <div className="flex flex-wrap items-center justify-center gap-2">
+    <div className="flex flex-wrap items-center justify-center gap-1">
       {ICONS.map(({ file, label }) => (
         <div
           key={label}
-          className={`flex h-9 w-14 items-center justify-center rounded-lg ${
+          className={`flex h-8 w-12 items-center justify-center rounded-lg ${
             isDark ? "" : "border border-gray-100 bg-white shadow-xs"
           }`}
           title={label}

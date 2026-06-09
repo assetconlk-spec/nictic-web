@@ -14,9 +14,7 @@ const ICONS = [
   { file: "ipay.png",    label: "iPay" },
 ];
 
-export default function PaymentIcons({ variant = "light" }) {
-  const isDark = variant === "dark";
-
+export default function PaymentIcons() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-2">
       {ICONS.map(({ file, label }) => (
@@ -25,7 +23,7 @@ export default function PaymentIcons({ variant = "light" }) {
           src={`/payment-icons/${file}`}
           alt={label}
           title={label}
-          className={`h-7 w-auto object-contain ${isDark ? "opacity-70" : ""}`}
+          className="h-7 w-auto object-contain"
         />
       ))}
     </div>

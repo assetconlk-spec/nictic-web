@@ -143,7 +143,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col items-center gap-4">
-          <PaymentIcons variant="dark" />
+          <PaymentIcons />
           <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-2">
             <p className="text-xs text-primary-200/40">
               &copy; {currentYear} nictic.travel. All rights reserved.

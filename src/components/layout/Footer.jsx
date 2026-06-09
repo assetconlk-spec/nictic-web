@@ -142,8 +142,12 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col items-center gap-4">
-          <PaymentIcons variant="dark" />
+        <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col items-center gap-3">
+          <div className="w-full overflow-x-auto scrollbar-hide">
+            <div className="flex justify-center">
+              <PaymentIcons variant="dark" />
+            </div>
+          </div>
           <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-2">
             <p className="text-xs text-primary-200/40">
               &copy; {currentYear} nictic.travel. All rights reserved.

@@ -15,6 +15,7 @@ import {
 import { pb } from "../lib/pocketbase";
 import PageLoader from "../components/shared/PageLoader";
 import BookingModal from "../components/ui/BookingModal";
+import PaymentIcons from "../components/shared/PaymentIcons";
 
 export default function TourDetailPage() {
   const { slug } = useParams();
@@ -355,6 +356,9 @@ export default function TourDetailPage() {
                   <p className="mt-3 text-center text-xs text-text-secondary">
                     Secured by PayHere · Balance payable on arrival
                   </p>
+                  <div className="mt-4 border-t border-gray-100 pt-4">
+                    <PaymentIcons />
+                  </div>
                 </div>
 
                 {/* Route Map — inside sticky wrapper so it scrolls with the booking card */}

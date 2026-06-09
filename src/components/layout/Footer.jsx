@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { FaFacebookF, FaInstagram } from "react-icons/fa";
 import { HiOutlinePhone, HiOutlineEnvelope, HiOutlineMapPin } from "react-icons/hi2";
 import { siteConfig } from "../../data/siteConfig";
+import PaymentIcons from "../shared/PaymentIcons";
 import { navLinks } from "../../data/navigation";
 import { pb } from "../../lib/pocketbase";
 import { useContactInfo } from "../../hooks/useContactInfo";
@@ -141,13 +142,16 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-xs text-primary-200/40">
-            &copy; {currentYear} nictic.travel. All rights reserved.
-          </p>
-          <p className="text-xs text-primary-200/40">
-            Crafted with care in Sri Lanka
-          </p>
+        <div className="mx-auto max-w-7xl px-6 py-5 flex flex-col items-center gap-4">
+          <PaymentIcons variant="dark" />
+          <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-2">
+            <p className="text-xs text-primary-200/40">
+              &copy; {currentYear} nictic.travel. All rights reserved.
+            </p>
+            <p className="text-xs text-primary-200/40">
+              Crafted with care in Sri Lanka
+            </p>
+          </div>
         </div>
       </div>
     </footer>

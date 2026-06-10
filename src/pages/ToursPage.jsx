@@ -112,7 +112,7 @@ function TourCard({ tour, index }) {
 /* ── Page ───────────────────────────────────────────────────── */
 
 export default function ToursPage() {
-  useEffect(() => { document.title = "Itineraries | nictic.travel"; }, []);
+  useEffect(() => { document.title = "Itineraries | nictic"; }, []);
 
   const [active, setActive] = useState("All");
   const [tours, setTours] = useState([]);

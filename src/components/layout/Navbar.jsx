@@ -39,9 +39,6 @@ export default function Navbar() {
             <span className={`text-2xl font-extrabold tracking-tight transition-colors ${transparent ? "text-white" : "text-primary-600"}`}>
               nictic
             </span>
-            <span className={`text-2xl font-light transition-colors ${transparent ? "text-white/60" : "text-primary-400"}`}>
-              .travel
-            </span>
           </Link>
 
           {/* Desktop nav */}

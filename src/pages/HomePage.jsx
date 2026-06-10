@@ -10,7 +10,7 @@ import GalleryPreview from "../components/sections/GalleryPreview";
 
 export default function HomePage() {
   useEffect(() => {
-    document.title = "nictic.travel | Sri Lanka Tourism";
+    document.title = "nictic | Sri Lanka Tourism";
   }, []);
 
   return (

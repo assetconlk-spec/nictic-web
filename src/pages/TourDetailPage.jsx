@@ -47,7 +47,7 @@ export default function TourDetailPage() {
           exclusions: parseJson(data.exclusions),
           itinerary:  parseJson(data.itinerary),
         });
-        document.title = `${data.title} | nictic.travel`;
+        document.title = `${data.title} | nictic`;
       } catch {
         navigate("/itineraries");
       }

@@ -23,7 +23,7 @@ function SkeletonCard({ tall }) {
 export default function GalleryPage() {
   const banner = usePageBanner("gallery", "/images/aboutUs/gallery.jpeg", 60);
 
-  useEffect(() => { document.title = "Gallery | nictic.travel"; }, []);
+  useEffect(() => { document.title = "Gallery | nictic"; }, []);
 
   const [active, setActive] = useState("All");
   const [lightboxIndex, setLightboxIndex] = useState(-1);

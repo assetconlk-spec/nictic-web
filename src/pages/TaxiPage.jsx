@@ -81,7 +81,7 @@ const steps = [
 ];
 
 export default function TaxiPage() {
-  useEffect(() => { document.title = "Taxi & Transfers | nictic.travel"; }, []);
+  useEffect(() => { document.title = "Taxi & Transfers | nictic"; }, []);
 
   return (
     <>

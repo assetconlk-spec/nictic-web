@@ -29,7 +29,6 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link to="/" className="inline-flex items-baseline gap-1 mb-5">
               <span className="text-2xl font-extrabold tracking-tight text-white">nictic</span>
-              <span className="text-2xl font-light text-primary-400">.travel</span>
             </Link>
             <p className="text-sm leading-relaxed text-primary-200/70 mb-6">
               {siteConfig.tagline} — your trusted partner for authentic Sri Lankan experiences.
@@ -146,7 +145,7 @@ export default function Footer() {
           <PaymentIcons />
           <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-2">
             <p className="text-xs text-primary-200/40">
-              &copy; {currentYear} nictic.travel. All rights reserved.
+              &copy; {currentYear} nictic. All rights reserved.
             </p>
             <p className="text-xs text-primary-200/40">
               Crafted with care in Sri Lanka

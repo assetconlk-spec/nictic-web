@@ -103,7 +103,7 @@ export default function EssentialInfoPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    document.title = "Essential Information | nictic.travel";
+    document.title = "Essential Information | nictic";
     pb.collection("essential_info")
       .getFirstListItem("")
       .then((record) => setInfo(record))

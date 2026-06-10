@@ -46,7 +46,7 @@ function SidebarContent({ onClose }) {
     <div className="flex h-full flex-col bg-gray-900">
       <div className="flex h-16 items-center gap-2 border-b border-white/10 px-6">
         <span className="text-lg font-bold text-white">
-          nictic.travel Admin
+          nictic Admin
         </span>
       </div>
 
@@ -202,7 +202,7 @@ export default function AdminLayout() {
           >
             <HiOutlineBars3 className="h-6 w-6" />
           </button>
-          <p className="text-sm font-medium text-gray-500">nictic.travel</p>
+          <p className="text-sm font-medium text-gray-500">nictic</p>
         </header>
 
         <main className="flex-1 overflow-y-auto p-4 lg:p-6">

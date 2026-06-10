@@ -183,7 +183,7 @@ function ActivityCard({ act, index }) {
 }
 
 export default function ActivitiesPage() {
-  useEffect(() => { document.title = "Activities | nictic.travel"; }, []);
+  useEffect(() => { document.title = "Activities | nictic"; }, []);
   const [active, setActive] = useState("All");
 
   const filtered = active === "All" ? activities : activities.filter((a) => a.category === active);

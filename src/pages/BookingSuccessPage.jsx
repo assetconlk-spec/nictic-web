@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router";
 import { HiOutlineCheckCircle, HiOutlineCalendarDays, HiOutlineEnvelope, HiOutlinePhone } from "react-icons/hi2";
 
 export default function BookingSuccessPage() {
-  useEffect(() => { document.title = "Booking Confirmed | nictic.travel"; }, []);
+  useEffect(() => { document.title = "Booking Confirmed | nictic"; }, []);
 
   const [params] = useSearchParams();
   const orderId = params.get("order_id") || "";

@@ -19,7 +19,7 @@ export default function ContactPage() {
   const banner = usePageBanner("contact", "/images/aboutUs/contact-us-banner.jpeg", 50);
   const contact = useContactInfo();
 
-  useEffect(() => { document.title = "Contact Us | nictic.travel"; }, []);
+  useEffect(() => { document.title = "Contact Us | nictic"; }, []);
 
   const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);

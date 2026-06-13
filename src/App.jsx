@@ -3,21 +3,17 @@ import { AuthProvider } from "./context/AuthContext";
 import Layout from "./components/layout/Layout";
 import ProtectedRoute from "./components/admin/ProtectedRoute";
 import AdminLayout from "./components/admin/AdminLayout";
-import HomePage from "./pages/HomePage";
 import ToursPage from "./pages/ToursPage";
 import TourDetailPage from "./pages/TourDetailPage";
 import TaxiPage from "./pages/TaxiPage";
 import ActivitiesPage from "./pages/ActivitiesPage";
-import GalleryPage from "./pages/GalleryPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
 import EssentialInfoPage from "./pages/EssentialInfoPage";
 import LoginPage from "./pages/admin/LoginPage";
 import DashboardPage from "./pages/admin/DashboardPage";
 import ToursAdminPage from "./pages/admin/ToursAdminPage";
-import GalleryAdminPage from "./pages/admin/GalleryAdminPage";
 import InquiriesPage from "./pages/admin/InquiriesPage";
-import SliderAdminPage from "./pages/admin/SliderAdminPage";
 import EssentialInfoAdminPage from "./pages/admin/EssentialInfoAdminPage";
 import AboutAdminPage from "./pages/admin/AboutAdminPage";
 import ContactInfoAdminPage from "./pages/admin/ContactInfoAdminPage";
@@ -33,12 +29,11 @@ export default function App() {
         <Routes>
           {/* Public site */}
           <Route element={<Layout />}>
-            <Route index element={<HomePage />} />
+            <Route index element={<Navigate to="/itineraries" replace />} />
             <Route path="itineraries" element={<ToursPage />} />
             <Route path="itineraries/:slug" element={<TourDetailPage />} />
             <Route path="taxi" element={<TaxiPage />} />
             <Route path="activities" element={<ActivitiesPage />} />
-            <Route path="gallery" element={<GalleryPage />} />
             <Route path="about" element={<AboutPage />} />
             <Route path="contact" element={<ContactPage />} />
             <Route path="essential-info" element={<EssentialInfoPage />} />
@@ -58,9 +53,7 @@ export default function App() {
             <Route index element={<Navigate to="dashboard" replace />} />
             <Route path="dashboard" element={<DashboardPage />} />
             <Route path="itineraries" element={<ToursAdminPage />} />
-            <Route path="gallery" element={<GalleryAdminPage />} />
             <Route path="inquiries" element={<InquiriesPage />} />
-            <Route path="slider" element={<SliderAdminPage />} />
             <Route path="essential-info" element={<EssentialInfoAdminPage />} />
             <Route path="about" element={<AboutAdminPage />} />
             <Route path="contact-info" element={<ContactInfoAdminPage />} />

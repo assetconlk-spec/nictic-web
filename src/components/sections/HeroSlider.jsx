@@ -71,7 +71,7 @@ export default function HeroSlider() {
         <div className="absolute inset-0 bg-linear-to-r from-black/60 via-transparent to-transparent" />
 
         {/* Bottom-left editorial content */}
-        <div className="absolute bottom-0 left-0 right-0 px-6 pb-40 md:px-12 lg:px-16 lg:pb-44 lg:max-w-4xl">
+        <div className="absolute bottom-0 left-0 right-0 px-6 pb-16 md:px-12 lg:px-16 lg:pb-20 lg:max-w-4xl">
 
           {/* Slide counter label */}
           <motion.p
@@ -149,61 +149,25 @@ export default function HeroSlider() {
           </motion.div>
         </div>
 
-        {/* Bottom bar — dots centered above, tabs spanning full width below */}
+        {/* Slide indicators — centered */}
         <motion.div
-          className="absolute bottom-0 left-0 right-0 z-10"
+          className="absolute bottom-6 left-0 right-0 z-10 flex justify-center gap-3"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
-          {/* Slide indicators — centered */}
-          <div className="flex justify-center gap-3 pb-3">
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => scrollTo(i)}
-                aria-label={`Go to slide ${i + 1}`}
-                className={`cursor-pointer rounded-full transition-all duration-300 ${
-                  i === selectedIndex
-                    ? "h-2 w-8 bg-white"
-                    : "h-2 w-2 bg-white/40 hover:bg-white/70"
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* Service tabs — full width, equal columns */}
-          <div className="grid grid-cols-3 divide-x divide-white/10 bg-black/40 backdrop-blur-md">
-            {[
-              { num: "01", label: t("services.itineraries"), to: "/itineraries",      desc: t("services.itinerariesDesc") },
-              { num: "02", label: t("services.taxi"),        to: "/taxi",       desc: t("services.taxiDesc") },
-              { num: "03", label: t("services.activities"),  to: "/activities", desc: t("services.activitiesDesc") },
-            ].map((tab) => (
-              <Link
-                key={tab.label}
-                to={tab.to}
-                className="group relative flex items-center justify-between gap-4 px-6 py-5 transition-colors duration-300 hover:bg-white/5 overflow-hidden"
-              >
-                {/* Hover accent line at top */}
-                <span className="absolute inset-x-0 top-0 h-0.5 scale-x-0 bg-primary-400 transition-transform duration-300 origin-left group-hover:scale-x-100" />
-
-                <div>
-                  <span className="mb-1 block text-[10px] font-semibold uppercase tracking-[0.2em] text-white/35 group-hover:text-primary-400 transition-colors duration-300">
-                    {tab.num}
-                  </span>
-                  <p className="text-sm font-bold text-white leading-none">{tab.label}</p>
-                  <p className="mt-1 text-xs text-white/50 group-hover:text-white/70 transition-colors duration-300">{tab.desc}</p>
-                </div>
-
-                <svg
-                  className="h-4 w-4 shrink-0 text-white/30 transition-all duration-300 group-hover:translate-x-1 group-hover:text-primary-400"
-                  fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                </svg>
-              </Link>
-            ))}
-          </div>
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => scrollTo(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              className={`cursor-pointer rounded-full transition-all duration-300 ${
+                i === selectedIndex
+                  ? "h-2 w-8 bg-white"
+                  : "h-2 w-2 bg-white/40 hover:bg-white/70"
+              }`}
+            />
+          ))}
         </motion.div>
       </section>
     </>
